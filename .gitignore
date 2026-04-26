@@ -1,0 +1,61 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Editors / IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.code-workspace
+
+# --- OS cruft ---
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# --- Ableton Live (in case test sets land here) ---
+Backup/
+*.als.bak
+*.alc.bak
+"Ableton Project Info"/
+
+# --- Logs & local scratch ---
+*.log
+Log.txt
+/tmp/
+/scratch/
+.local/
+
+# --- Secrets / env ---
+.env
+.env.*
+!.env.example
+
+# --- Claude Code (keep shared config, ignore user-local) ---
+.claude/settings.local.json
+
+# --- Reference / external docs ---
+*.xml
