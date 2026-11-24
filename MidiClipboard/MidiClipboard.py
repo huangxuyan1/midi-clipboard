@@ -6,7 +6,7 @@ import subprocess
 import Live
 from ableton.v2.control_surface import ControlSurface
 
-from . import notes_serde
+from . import abc_serde, notes_serde
 
 
 TRIGGER_HOST = "127.0.0.1"
@@ -21,6 +21,11 @@ ANNOUNCE_DELAY_TICKS = 20  # 2 s — wait for spawned bridge to bind before anno
 # Use Ctrl+Shift+L while Ableton is foreground to pop up a log tail viewer.
 # Flip to True if you'd rather see the bridge console immediately on spawn.
 BRIDGE_VISIBLE = False
+
+# What Ctrl+C puts on the clipboard: "abc" (ABC notation) or "text" (the
+# native format, which also keeps velocity, probability and exact timing).
+# Paste reads either format regardless of this setting.
+COPY_FORMAT = "abc"
 
 PYTHON_EXE = "python"
 BRIDGE_SCRIPT = "bridge.py"
@@ -57,6 +62,11 @@ def _gather_meta(song, clip):
     _try("tempo", lambda: song.tempo)
     _try("time_sig", lambda: "{}/{}".format(
         int(clip.signature_numerator), int(clip.signature_denominator)))
+    # The clip's scale. Clip has no scale property, but the Song's root_note
+    # and scale_name follow the clip being edited. The ABC writer turns them
+    # into the K: line.
+    _try("root_note", lambda: int(song.root_note))
+    _try("scale_name", lambda: song.scale_name)
     _try("clip_length", lambda: _content_duration(clip))
     _try("clip_name", lambda: clip.name)
     _try("track_name", lambda: _find_track_name(clip))
@@ -196,15 +206,32 @@ class MidiClipboard(ControlSurface):
                 self._send("STATUS: copy ignored (no notes selected)")
                 return
             meta = _gather_meta(song, clip)
-            self._send("HOTKEY: " + notes_serde.serialize_notes(notes, meta=meta))
+            if COPY_FORMAT == "abc":
+                # ABC has no muted notes, so the writer leaves them out.
+                payload = abc_serde.serialize_abc(notes, meta=meta)
+                muted = sum(1 for note in notes if note.mute)
+                if payload is None:
+                    self._send("STATUS: copy ignored (all {} selected notes are muted)".format(muted))
+                    return
+                self._send("HOTKEY: " + payload)
+                if muted:
+                    self._send("STATUS: left {} muted notes out of the ABC copy".format(muted))
+            else:
+                self._send("HOTKEY: " + notes_serde.serialize_notes(notes, meta=meta))
         except Exception as e:
             self._send("COPY ERROR: {}".format(e))
 
     def _handle_paste(self, text):
         try:
-            specs = notes_serde.parse_text(text)
+            if abc_serde.looks_like_abc(text):
+                fmt = "ABC"
+                specs = [Live.Clip.MidiNoteSpecification(**n)
+                         for n in abc_serde.parse_abc(text)]
+            else:
+                fmt = "text"
+                specs = notes_serde.parse_text(text)
             if not specs:
-                self._send("STATUS: paste ignored (no notes parsed from clipboard)")
+                self._send("STATUS: paste ignored (no notes parsed from {} clipboard)".format(fmt))
                 return
             song = Live.Application.get_application().get_document()
             clip = song.view.detail_clip
@@ -212,8 +239,8 @@ class MidiClipboard(ControlSurface):
                 self._send("STATUS: paste ignored (no MIDI clip in detail view)")
                 return
             clip.add_new_notes(tuple(specs))
-            self._send("STATUS: pasted {} notes into {!r}".format(
-                len(specs), clip.name))
+            self._send("STATUS: pasted {} notes ({}) into {!r}".format(
+                len(specs), fmt, clip.name))
         except Exception as e:
             self._send("PASTE ERROR: {}".format(e))
 

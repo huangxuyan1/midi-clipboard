@@ -9,21 +9,24 @@
 ![Status: working](https://img.shields.io/badge/status-working-3FB950)
 
 Select notes in a clip, press **Ctrl+C**, and they land on your system
-clipboard as clean, human-readable text. Copy text in the same format from
+clipboard as [ABC notation](https://abcnotation.com/) — the plain-text music
+format that notation apps, tune sites and LLMs already read. Copy ABC from
 anywhere, press **Ctrl+Shift+V**, and the notes appear in your selected
 clip. Ableton's own copy/paste keep working exactly as before — this rides
 alongside them.
 
 ```text
-notes:
-  note start dur ...
-  C3 0 1
-  E3 0 1
-  G3 0 1
+X:1
+T:Triad
+M:4/4
+L:1/8
+Q:1/4=120
+K:C
+[CEG]8 |]
 ```
 
-That's a C major triad. Paste it into a chat, an email, a text file,
-another DAW — or hand it to an AI and ask for a variation.
+That's a C major triad held for one bar. Paste it into a chat, an email, a
+text file, a notation app — or hand it to an AI and ask for a variation.
 
 ---
 
@@ -39,10 +42,13 @@ another DAW — or hand it to an AI and ask for a variation.
 ## Features
 
 - **Two-way** — clip → clipboard and clipboard → clip.
-- **Readable format** — note names (`C#3`), beats, and only the fields that
-  matter. See [the format guide](grammar.md).
-- **Context metadata** — copies carry tempo, time signature, clip length,
-  clip/track name, and arrangement position.
+- **ABC notation by default** — copies are standard ABC, and paste accepts
+  ABC from the web or an LLM. See [ABC notation](#abc-notation).
+- **Lossless native format** — an alternative text format that also keeps
+  velocity, probability and exact timing. See
+  [Native text format](#native-text-format).
+- **Context metadata** — copies carry tempo, time signature, key and clip name;
+  the native format adds clip length, track name and arrangement position.
 - **Foreground-scoped hotkeys** — they only fire while Ableton is the active
   window, so your shortcuts in every other app are untouched.
 - **No Python install** — the background helper ships as a self-contained
@@ -64,8 +70,8 @@ another DAW — or hand it to an AI and ask for a variation.
 
 | Shortcut | Where | Action |
 |---|---|---|
-| **Ctrl + C** | MIDI editor, notes selected | Ableton's normal copy **plus** the selected notes are written to the clipboard as text. Nothing selected → behaves like plain Ctrl+C, clipboard untouched. |
-| **Ctrl + Shift + V** | a MIDI clip open in detail view | Reads the clipboard, parses the notes, and inserts them into the clip (`Ctrl+Z` to undo). |
+| **Ctrl + C** | MIDI editor, notes selected | Ableton's normal copy **plus** the selected notes are written to the clipboard as ABC (or native text, see [Choosing the copy format](#choosing-the-copy-format)). Nothing selected → behaves like plain Ctrl+C, clipboard untouched. |
+| **Ctrl + Shift + V** | a MIDI clip open in detail view | Reads the clipboard (ABC or native text, detected automatically), parses the notes, and inserts them into the clip (`Ctrl+Z` to undo). |
 | **Ctrl + Shift + L** | anywhere in Ableton | Opens a small live-updating log window so you can see what the helper is doing. Close it any time. |
 
 All shortcuts require Ableton to be the foreground window.
@@ -74,7 +80,63 @@ The background helper starts automatically when Ableton loads the script
 and shuts down when you deactivate it (or quit Live). It logs to
 `MidiClipboard/bridge.log`.
 
-## The text format
+## ABC notation
+
+Clipboard text containing a `K:` (key) line is read as ABC; anything else
+is read as the [native text format](#native-text-format).
+
+```text
+X:1
+T:Little Waltz
+M:3/4
+L:1/8
+K:Dm
+"Dm"A3 B A2 | "Gm"G4 F2 | "A7"E2 ^C2 E2 | "Dm"D6 |
+```
+
+ABC `C` is middle C (MIDI 60, Ableton `C3`), and times are Live beats
+(quarter notes) from the clip's beat 0.
+
+### Copying (Ctrl+C)
+
+- The key signature is the clip's scale. (Live reports the scale of the clip
+  you're editing through `song.root_note` and `song.scale_name`.) Scales
+  with no ABC key signature, such as Whole Tone, fall back to guessing the
+  key from the notes. Notes outside the key get accidentals.
+- Timing snaps to a 1/12-beat grid, which covers sixteenths and eighth- and
+  sixteenth-note triplets.
+- Notes that start together with the same length become chords (`[CEG]`).
+  Notes that overlap with different lengths go into separate voices
+  (`V:1`, `V:2`, …), highest first.
+- Notes crossing a bar line are tied; runs of empty bars become `Z` rests,
+  so positions survive a round trip.
+- Muted (deactivated) notes are left out, since ABC can't mark a note as
+  muted. If every selected note is muted, the clipboard is left untouched.
+  Use the native format to keep them.
+- Velocity and probability are not written (pasted notes come back at
+  Live's default velocity). Notes before the clip start shift to the
+  nearest earlier bar line.
+
+### Pasting (Ctrl+Shift+V)
+
+- **Understood:** `M:` / `L:` / `K:` (all modes, plus explicit accidentals
+  such as `K:D ^g`), note lengths, rests (`z`, `x`, `Z`, `X`), chords,
+  ties, broken rhythm (`>` `<`), tuplets, key-signature and bar-scoped
+  accidentals, inline fields (`[K:G]`), voices (`V:`, each from beat 0),
+  voice overlay (`&`), and repeats with numbered endings, which are written
+  out in full.
+- **Ignored:** chord symbols, decorations and dynamics, grace notes, slurs,
+  lyrics, tempo (`Q:`), and part order (`P:`).
+- Prose and Markdown code fences around the tune are skipped. Only the first
+  tune in the clipboard is pasted.
+
+## Choosing the copy format
+
+Ctrl+C writes ABC by default. To copy the lossless native format instead,
+set `COPY_FORMAT = "text"` near the top of `MidiClipboard/MidiClipboard.py`
+and restart Live. Paste reads both formats either way.
+
+## Native text format
 
 A `notes:` block, one note per line — `pitch start duration` plus optional
 named fields — preceded by an optional `meta:` block of context:
@@ -83,6 +145,8 @@ named fields — preceded by an optional `meta:` block of context:
 meta:
   tempo=120
   time_sig=4/4
+  root_note=9
+  scale_name="Major"
   clip_length=8
   clip_name="Verse Riff"
   track_name="Grand Piano"
@@ -119,7 +183,7 @@ cooperating processes that talk over localhost UDP:
    │   • reads/writes clip     │  trigger   │     (foreground-aware)   │
    │     notes via Live API    │            │   • OS clipboard r/w     │
    │   • serializes/parses     │  UDP :19846│   • spawns the log window│
-   │     the text format       │ ──────────►│                          │
+   │     ABC / native text     │ ──────────►│                          │
    └──────────────────────────┘   notes    └──────────────────────────┘
 ```
 
@@ -140,6 +204,20 @@ single `bridge.exe` (one artifact, two roles via `--viewer`). If
 `bridge.exe` is absent, the remote script falls back to launching
 `python bridge.py` — convenient while iterating, but it then requires a
 system Python on `PATH`.
+
+The ABC reader/writer has unit tests that run outside Live:
+
+```text
+python -m unittest discover -s tests
+```
+
+For live development, make the Remote Scripts folder a junction to the
+repo so Live loads your working copy, then restart Live after each change
+(it doesn't reload remote-script code while running):
+
+```text
+mklink /J "%USERPROFILE%\Documents\Ableton\User Library\Remote Scripts\MidiClipboard" "<repo>\MidiClipboard"
+```
 
 ## Troubleshooting
 
@@ -163,4 +241,4 @@ system Python on `PATH`.
 - macOS support (the bridge is Windows-only today)
 - Configurable hotkeys and ports
 - Optional time-shift on paste (to playhead instead of recorded positions)
-
+- A hotkey to switch the copy format without editing the script
