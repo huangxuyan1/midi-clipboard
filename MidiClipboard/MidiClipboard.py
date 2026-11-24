@@ -1,65 +1,12 @@
 import errno
 import os
-import re
 import socket
 import subprocess
 
 import Live
 from ableton.v2.control_surface import ControlSurface
 
-
-# --- Wire format ---
-# Abbreviated keys used in the text payload <-> full Live API field names.
-_WIRE_TO_API = {
-    "pitch": "pitch",
-    "start": "start_time",
-    "dur":   "duration",
-    "vel":   "velocity",
-    "mute":  "mute",
-    "prob":  "probability",
-    "vd":    "velocity_deviation",
-    "rv":    "release_velocity",
-}
-_INT_FIELDS = {"pitch", "velocity", "velocity_deviation", "release_velocity"}
-_FLOAT_FIELDS = {"start_time", "duration", "probability"}
-_NOTE_BLOCK_RE = re.compile(r"\{([^}]*)\}")
-
-
-def _parse_scalar(v):
-    v = v.strip()
-    if v == "True":
-        return True
-    if v == "False":
-        return False
-    if "." in v or "e" in v or "E" in v:
-        return float(v)
-    return int(v)
-
-
-def _parse_note_specs(text):
-    """Parse the wire format produced by _format_notes back into a list of
-    keyword-arg dicts ready for Live.Clip.MidiNoteSpecification(**spec).
-    Tolerates whitespace and unknown keys (silently dropped)."""
-    specs = []
-    for m in _NOTE_BLOCK_RE.finditer(text):
-        spec = {}
-        for kv in m.group(1).split(","):
-            if not kv.strip():
-                continue
-            k, _, v = kv.partition(":")
-            api_key = _WIRE_TO_API.get(k.strip())
-            if api_key is None:
-                continue
-            value = _parse_scalar(v)
-            # Coerce to the type Live expects, defensively.
-            if api_key in _INT_FIELDS:
-                value = int(value)
-            elif api_key in _FLOAT_FIELDS:
-                value = float(value)
-            spec[api_key] = value
-        if spec:
-            specs.append(spec)
-    return specs
+from . import notes_serde
 
 
 TRIGGER_HOST = "127.0.0.1"
@@ -67,26 +14,89 @@ TRIGGER_PORT = 19845
 RESULT_HOST = "127.0.0.1"
 RESULT_PORT = 19846
 
-DRAIN_DELAY_TICKS = 1     # 100 ms — hotkey latency budget
-ANNOUNCE_DELAY_TICKS = 20 # 2 s — wait for spawned helper to bind before announcing
+DRAIN_DELAY_TICKS = 1      # 100 ms — hotkey latency budget
+ANNOUNCE_DELAY_TICKS = 20  # 2 s — wait for spawned bridge to bind before announcing
 
-# The helper runs windowless so closing a stray console can't kill it.
+# The bridge runs windowless so closing a stray console can't kill it.
 # Use Ctrl+Shift+L while Ableton is foreground to pop up a log tail viewer.
-# Flip to True if you'd rather see the helper console immediately on spawn.
-HELPER_VISIBLE = False
+# Flip to True if you'd rather see the bridge console immediately on spawn.
+BRIDGE_VISIBLE = False
 
 PYTHON_EXE = "python"
-HELPER_SCRIPT = "receiver.py"
+BRIDGE_SCRIPT = "bridge.py"
+BRIDGE_EXE = "bridge.exe"
 
 
-def _format_notes(notes):
-    return [
-        "{{pitch:{}, start:{}, dur:{}, vel:{}, mute:{}, prob:{}, vd:{}, rv:{}}}".format(
-            n.pitch, n.start_time, n.duration, n.velocity,
-            n.mute, n.probability, n.velocity_deviation, n.release_velocity,
-        )
-        for n in notes
-    ]
+def _content_duration(clip):
+    """The clip's real content length in beats. Prefer end_time - start_time:
+    clip.length reports only the LOOP length for looping clips, which
+    understates content when the loop is a subset. Fall back to clip.length."""
+    try:
+        d = clip.end_time - clip.start_time
+        if d and d > 0:
+            return d
+    except Exception:
+        pass
+    return clip.length
+
+
+def _gather_meta(song, clip):
+    """Best-effort metadata gather. Each property is guarded so any single
+    failure (older Live without the attr, weird clip state, etc.) just
+    drops that one key rather than poisoning the whole block."""
+    meta = {}
+
+    def _try(key, fn):
+        try:
+            v = fn()
+            if v is not None and v != "":
+                meta[key] = v
+        except Exception:
+            pass
+
+    _try("tempo", lambda: song.tempo)
+    _try("time_sig", lambda: "{}/{}".format(
+        int(clip.signature_numerator), int(clip.signature_denominator)))
+    _try("clip_length", lambda: _content_duration(clip))
+    _try("clip_name", lambda: clip.name)
+    _try("track_name", lambda: _find_track_name(clip))
+
+    # MIDI clips loop by default, so looping=True on its own is noise. Only
+    # surface loop info when the loop is a real subset/offset of the content
+    # — i.e. NOT the trivial 0..duration full-clip loop.
+    try:
+        if clip.looping:
+            dur = _content_duration(clip)
+            ls, le = clip.loop_start, clip.loop_end
+            trivial = abs(ls) < 1e-6 and abs(le - dur) < 1e-3
+            if not trivial:
+                meta["looping"] = True
+                meta["loop_start"] = ls
+                meta["loop_end"] = le
+    except Exception:
+        pass
+
+    # clip.start_time is the clip's offset within the arrangement (for
+    # arrangement clips). NOT clip.position, which is the loop position.
+    try:
+        if clip.is_arrangement_clip:
+            meta["arrangement_start"] = clip.start_time
+    except Exception:
+        pass
+
+    return meta
+
+
+def _find_track_name(clip):
+    """Walk canonical_parent up to a Track and return its name. For
+    arrangement clips the parent is the Track directly; for session clips
+    the parent is a ClipSlot and we need one more hop."""
+    parent = clip.canonical_parent
+    name = getattr(parent, "name", None)
+    if name:
+        return name
+    grandparent = getattr(parent, "canonical_parent", None)
+    return getattr(grandparent, "name", None)
 
 
 class MidiClipboard(ControlSurface):
@@ -94,18 +104,18 @@ class MidiClipboard(ControlSurface):
         ControlSurface.__init__(self, c_instance)
         self._sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self._listen_sock = None
-        self._helper_proc = None
+        self._bridge_proc = None
 
         self._bind_status = self._open_listen_socket()
-        self._helper_status = self._spawn_helper()
+        self._bridge_status = self._spawn_bridge()
 
         self.show_message("MidiClipboard ready")
         self.schedule_message(DRAIN_DELAY_TICKS, self._drain_trigger)
-        # Delay the activation message so the freshly-spawned helper has time
+        # Delay the activation message so the freshly-spawned bridge has time
         # to bind its result port; otherwise we'd send into the void.
         self.schedule_message(ANNOUNCE_DELAY_TICKS, self._announce)
 
-    # ---------------- startup helpers ----------------
+    # ---------------- startup ----------------
 
     def _open_listen_socket(self):
         try:
@@ -118,30 +128,37 @@ class MidiClipboard(ControlSurface):
         except Exception as e:
             return "FAILED: {}".format(e)
 
-    def _spawn_helper(self):
-        receiver_path = os.path.join(
-            os.path.dirname(os.path.abspath(__file__)), HELPER_SCRIPT
-        )
-        if not os.path.exists(receiver_path):
-            return "FAILED: {} not found".format(receiver_path)
+    def _spawn_bridge(self):
+        # Prefer the bundled standalone exe (no Python install needed by the
+        # end user). Fall back to `python bridge.py` for development on a
+        # machine that has Python.
+        here = os.path.dirname(os.path.abspath(__file__))
+        exe = os.path.join(here, BRIDGE_EXE)
+        bridge_py = os.path.join(here, BRIDGE_SCRIPT)
+
+        if os.path.exists(exe):
+            cmd, how = [exe], "exe"
+        elif os.path.exists(bridge_py):
+            cmd, how = [PYTHON_EXE, bridge_py], "python"
+        else:
+            return "FAILED: neither {} nor {} found".format(BRIDGE_EXE, BRIDGE_SCRIPT)
+
         flags = (
-            subprocess.CREATE_NEW_CONSOLE if HELPER_VISIBLE
+            subprocess.CREATE_NEW_CONSOLE if BRIDGE_VISIBLE
             else subprocess.CREATE_NO_WINDOW
         )
         try:
-            self._helper_proc = subprocess.Popen(
-                [PYTHON_EXE, receiver_path],
-                creationflags=flags,
-            )
-            return "ok pid={}".format(self._helper_proc.pid)
+            self._bridge_proc = subprocess.Popen(cmd, creationflags=flags)
+            return "ok ({}) pid={}".format(how, self._bridge_proc.pid)
         except FileNotFoundError:
-            return "FAILED: '{}' not on PATH".format(PYTHON_EXE)
+            return "FAILED: '{}' not found (install Python or build {})".format(
+                cmd[0], BRIDGE_EXE)
         except Exception as e:
             return "FAILED: {}".format(e)
 
     def _announce(self):
-        self._send("STATUS: MidiClipboard activated (trigger_bind={}, helper={})".format(
-            self._bind_status, self._helper_status))
+        self._send("STATUS: MidiClipboard activated (trigger_bind={}, bridge={})".format(
+            self._bind_status, self._bridge_status))
 
     # ---------------- runtime ----------------
 
@@ -160,33 +177,32 @@ class MidiClipboard(ControlSurface):
                         text = data[len(b"paste:"):].decode("utf-8", errors="replace")
                         self._handle_paste(text)
                     else:
-                        self._handle_hotkey()
+                        self._handle_copy()
         finally:
             self.schedule_message(DRAIN_DELAY_TICKS, self._drain_trigger)
 
-    def _handle_hotkey(self):
+    def _handle_copy(self):
         # Only emit a HOTKEY payload when there's something real to copy.
-        # Other branches send STATUS so the helper logs them but does NOT
-        # touch the OS clipboard — important now that Ctrl+C is overloaded.
+        # Other branches send STATUS so the bridge logs them but does NOT
+        # touch the OS clipboard — important since Ctrl+C is overloaded.
         try:
             song = Live.Application.get_application().get_document()
             clip = song.view.detail_clip
             if clip is None or not clip.is_midi_clip:
-                self._send("STATUS: hotkey ignored (no MIDI clip in detail view)")
+                self._send("STATUS: copy ignored (no MIDI clip in detail view)")
                 return
             notes = clip.get_selected_notes_extended()
             if len(notes) == 0:
-                self._send("STATUS: hotkey ignored (no notes selected)")
+                self._send("STATUS: copy ignored (no notes selected)")
                 return
-            note_strs = _format_notes(notes)
-            self._send("HOTKEY: count={} [{}]".format(
-                len(note_strs), ", ".join(note_strs)))
+            meta = _gather_meta(song, clip)
+            self._send("HOTKEY: " + notes_serde.serialize_notes(notes, meta=meta))
         except Exception as e:
-            self._send("HOTKEY ERROR: {}".format(e))
+            self._send("COPY ERROR: {}".format(e))
 
     def _handle_paste(self, text):
         try:
-            specs = _parse_note_specs(text)
+            specs = notes_serde.parse_text(text)
             if not specs:
                 self._send("STATUS: paste ignored (no notes parsed from clipboard)")
                 return
@@ -195,16 +211,9 @@ class MidiClipboard(ControlSurface):
             if clip is None or not clip.is_midi_clip:
                 self._send("STATUS: paste ignored (no MIDI clip in detail view)")
                 return
-            note_objs = []
-            for spec in specs:
-                try:
-                    note_objs.append(Live.Clip.MidiNoteSpecification(**spec))
-                except Exception as e:
-                    self._send("PASTE ERROR: bad note {}: {}".format(spec, e))
-                    return
-            clip.add_new_notes(tuple(note_objs))
+            clip.add_new_notes(tuple(specs))
             self._send("STATUS: pasted {} notes into {!r}".format(
-                len(note_objs), clip.name))
+                len(specs), clip.name))
         except Exception as e:
             self._send("PASTE ERROR: {}".format(e))
 
@@ -217,11 +226,7 @@ class MidiClipboard(ControlSurface):
     # ---------------- shutdown ----------------
 
     def disconnect(self):
-        if self._helper_proc is not None:
-            try:
-                self._helper_proc.terminate()
-            except Exception:
-                pass
+        self._kill_bridge()
         for s in (self._sock, self._listen_sock):
             try:
                 if s is not None:
@@ -229,3 +234,23 @@ class MidiClipboard(ControlSurface):
             except Exception:
                 pass
         super().disconnect()
+
+    def _kill_bridge(self):
+        # bridge.exe is a PyInstaller onefile: the process we spawned is the
+        # bootloader, which launches a child holding the keyboard hook.
+        # terminate() only hits the bootloader and orphans the child, so we
+        # kill the whole tree with taskkill /T. Falls back to terminate()
+        # for the dev path (python bridge.py, a single process).
+        if self._bridge_proc is None:
+            return
+        pid = self._bridge_proc.pid
+        try:
+            subprocess.call(
+                ["taskkill", "/F", "/T", "/PID", str(pid)],
+                creationflags=subprocess.CREATE_NO_WINDOW,
+            )
+        except Exception:
+            try:
+                self._bridge_proc.terminate()
+            except Exception:
+                pass

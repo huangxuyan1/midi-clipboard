@@ -1,10 +1,16 @@
-"""Sidecar receiver for the MidiClipboard Ableton remote script.
+"""OS-side bridge for the MidiClipboard Ableton remote script.
 
-Installs a Windows low-level keyboard hook (WH_KEYBOARD_LL) and only fires
-on Ctrl+Shift+C while Ableton Live is the foreground application. When that
-happens, it sends a UDP trigger to the remote script. Separately, it listens
-on the result port and prints any messages the script sends back (status,
-detail_clip dumps, selected-notes dumps, hotkey responses, errors).
+Owns the three things the remote script can't reach from inside Live's
+stripped Python interpreter (no ctypes there):
+  1. Keyboard hook (WH_KEYBOARD_LL) — Ctrl+C / Ctrl+Shift+V / Ctrl+Shift+L
+     gated on Ableton being the foreground process.
+  2. OS clipboard — read on paste, write on copy. CF_UNICODETEXT, raw Win32.
+  3. UDP socket pair with the remote script (trigger out, results in).
+
+The wire format itself lives in ``notes_serde.py`` inside the remote
+script package; this file shuttles bytes and does not interpret them
+beyond a ``HOTKEY: count=`` prefix check used to decide whether a payload
+should land on the clipboard.
 
 Why a low-level hook instead of RegisterHotKey: RegisterHotKey is global —
 it steals the combo from every app, including Ableton's own. WH_KEYBOARD_LL
@@ -30,7 +36,9 @@ RESULT_PORT = 19846
 # --- Win32 constants ---
 WH_KEYBOARD_LL = 13
 WM_KEYDOWN = 0x0100
+WM_KEYUP = 0x0101
 WM_SYSKEYDOWN = 0x0104
+WM_SYSKEYUP = 0x0105
 
 VK_CONTROL = 0x11
 VK_SHIFT = 0x10
@@ -39,22 +47,28 @@ VK_V = 0x56   # paste hotkey
 VK_L = 0x4C   # log viewer hotkey
 
 # --- Logging ---
-LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "helper.log")
+# In a PyInstaller onefile build, __file__ lives in a temp extraction dir
+# (sys._MEIPASS) that's deleted on exit — so derive the base dir from the
+# exe location when frozen, and from this file when running as source.
+if getattr(sys, "frozen", False):
+    _BASE_DIR = os.path.dirname(os.path.abspath(sys.executable))
+else:
+    _BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+LOG_PATH = os.path.join(_BASE_DIR, "bridge.log")
 
 # File handler always on (so we can tail it on demand even when no console).
-# StreamHandler is harmless when there's no console — writes just vanish.
+# A StreamHandler is added only when stdout exists — in a frozen
+# --noconsole build sys.stdout is None and StreamHandler(None) would crash.
+_handlers = [logging.FileHandler(LOG_PATH, mode="a", encoding="utf-8")]
+if sys.stdout is not None:
+    _handlers.append(logging.StreamHandler(sys.stdout))
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(message)s",
     datefmt="%H:%M:%S",
-    handlers=[
-        logging.FileHandler(LOG_PATH, mode="a", encoding="utf-8"),
-        logging.StreamHandler(sys.stdout),
-    ],
+    handlers=_handlers,
 )
-log = logging.getLogger("midiclipboard.helper")
-log.info("=" * 60)
-log.info("helper starting; log at %s", LOG_PATH)
+log = logging.getLogger("midiclipboard.bridge")
 
 PROCESS_QUERY_LIMITED_INFORMATION = 0x1000
 
@@ -229,14 +243,27 @@ def is_ableton_foreground():
 _trigger_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 
+def _viewer_launch_cmd():
+    """Command to launch the tkinter log window as its own process.
+
+    Frozen (bundled exe): re-invoke ourselves as `bridge.exe --viewer <log>`.
+    Dev (python bridge.py): `python bridge.py --viewer <log>`.
+    Either way the viewer ships in the same artifact — no separate Python
+    install and no separate viewer file to locate at runtime.
+    """
+    if getattr(sys, "frozen", False):
+        return [sys.executable, "--viewer", LOG_PATH]
+    return [sys.executable, os.path.abspath(__file__), "--viewer", LOG_PATH]
+
+
 def _spawn_log_viewer():
-    """Open a new PowerShell window tailing the log file. Closing the
-    viewer does NOT affect the helper — they're independent processes."""
+    """Open the tkinter log window. Closing it does NOT affect the bridge —
+    they're independent processes. Windowless so no console flashes; tkinter
+    still creates its own GUI window."""
     try:
         subprocess.Popen(
-            ["powershell", "-NoExit", "-Command",
-             "Get-Content -Wait -Tail 200 '{}'".format(LOG_PATH)],
-            creationflags=subprocess.CREATE_NEW_CONSOLE,
+            _viewer_launch_cmd(),
+            creationflags=subprocess.CREATE_NO_WINDOW,
         )
         log.info("[hotkey] log viewer opened")
     except Exception as e:
@@ -259,33 +286,46 @@ def _trigger_paste():
         log.error("[paste] trigger failed: %s", e)
 
 
+# Target keys currently held down. WH_KEYBOARD_LL has no MOD_NOREPEAT, so
+# Windows fires WM_KEYDOWN repeatedly while a key is held — without this
+# guard, holding Ctrl+Shift+L spawns a window per repeat (and Ctrl+Shift+V
+# would paste many times). We act only on the up->down transition. All hook
+# calls run on the same (message-pump) thread, so a plain set is safe.
+_HOTKEYS = (VK_C, VK_V, VK_L)
+_held = set()
+
+
 def _hook_proc(nCode, wParam, lParam):
     try:
-        if nCode == 0 and wParam in (WM_KEYDOWN, WM_SYSKEYDOWN):
+        if nCode == 0:
             kb = ctypes.cast(lParam, ctypes.POINTER(KBDLLHOOKSTRUCT)).contents
             vk = kb.vkCode
-            if vk in (VK_C, VK_V, VK_L):
-                ctrl = (user32.GetAsyncKeyState(VK_CONTROL) & 0x8000) != 0
-                shift = (user32.GetAsyncKeyState(VK_SHIFT) & 0x8000) != 0
-                if ctrl and is_ableton_foreground():
-                    if vk == VK_C:
-                        # Plain Ctrl+C: fires in addition to Ableton's native
-                        # copy. Pass-through (CallNextHookEx below) means
-                        # Ableton still receives the keystroke.
-                        _trigger_sock.sendto(b"go", (TRIGGER_HOST, TRIGGER_PORT))
-                        log.info("[hotkey] Ctrl+C -> trigger sent")
-                    elif vk == VK_V and shift:
-                        # Ctrl+Shift+V: explicit paste-from-clipboard. Worker
-                        # thread so the hook callback returns fast.
-                        threading.Thread(
-                            target=_trigger_paste, daemon=True,
-                        ).start()
-                        log.info("[hotkey] Ctrl+Shift+V -> paste requested")
-                    elif vk == VK_L and shift:
-                        # Ctrl+Shift+L: pop the log viewer.
-                        threading.Thread(
-                            target=_spawn_log_viewer, daemon=True,
-                        ).start()
+            if vk in _HOTKEYS:
+                if wParam in (WM_KEYUP, WM_SYSKEYUP):
+                    _held.discard(vk)
+                elif wParam in (WM_KEYDOWN, WM_SYSKEYDOWN) and vk not in _held:
+                    _held.add(vk)  # first press; ignore auto-repeats until released
+                    ctrl = (user32.GetAsyncKeyState(VK_CONTROL) & 0x8000) != 0
+                    shift = (user32.GetAsyncKeyState(VK_SHIFT) & 0x8000) != 0
+                    if ctrl and is_ableton_foreground():
+                        if vk == VK_C:
+                            # Plain Ctrl+C: fires in addition to Ableton's
+                            # native copy. Pass-through (CallNextHookEx below)
+                            # means Ableton still receives the keystroke.
+                            _trigger_sock.sendto(b"go", (TRIGGER_HOST, TRIGGER_PORT))
+                            log.info("[hotkey] Ctrl+C -> trigger sent")
+                        elif vk == VK_V and shift:
+                            # Ctrl+Shift+V: paste-from-clipboard on a worker
+                            # thread so the hook callback returns fast.
+                            threading.Thread(
+                                target=_trigger_paste, daemon=True,
+                            ).start()
+                            log.info("[hotkey] Ctrl+Shift+V -> paste requested")
+                        elif vk == VK_L and shift:
+                            # Ctrl+Shift+L: pop the log viewer.
+                            threading.Thread(
+                                target=_spawn_log_viewer, daemon=True,
+                            ).start()
     except Exception as e:
         log.error("[hotkey] callback error: %s", e)
     return user32.CallNextHookEx(None, nCode, wParam, lParam)
@@ -295,34 +335,25 @@ def _hook_proc(nCode, wParam, lParam):
 _hook_thunk = LowLevelKeyboardProc(_hook_proc)
 
 
-def receiver_loop():
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    try:
-        sock.bind((RESULT_HOST, RESULT_PORT))
-    except OSError as e:
-        log.error("[receiver] BIND FAILED on %s:%d -> %s",
-                  RESULT_HOST, RESULT_PORT, e)
-        log.error("[receiver] another helper is probably running. "
-                  "Kill stray python.exe and re-toggle the script.")
-        return
-    log.info("[receiver] listening on udp %s:%d", RESULT_HOST, RESULT_PORT)
+def result_listener(sock):
+    log.info("[bridge] listening on udp %s:%d", RESULT_HOST, RESULT_PORT)
     while True:
         try:
             data, addr = sock.recvfrom(65535)
         except OSError as e:
-            log.error("[receiver] recv error: %s", e)
+            log.error("[bridge] recv error: %s", e)
             continue
         try:
             text = data.decode("utf-8", errors="replace")
         except Exception:
             text = repr(data)
         log.info("[from %s:%d] %s", addr[0], addr[1], text)
-        # Only touch the OS clipboard for messages that look like real note
-        # data. Status/error lines from the script just get logged. This is
-        # the safety layer that lets Ctrl+C overload coexist with Ableton's
-        # own copy of text in track names, plugin search fields, etc.
-        if text.startswith("HOTKEY: count="):
+        # Only touch the OS clipboard for HOTKEY messages. The script only
+        # sends HOTKEY when notes are actually selected; STATUS/ERROR lines
+        # just get logged. This is the safety layer that lets Ctrl+C
+        # overload coexist with Ableton's own copy of text in track names,
+        # plugin search fields, etc.
+        if text.startswith("HOTKEY: "):
             payload = text[len("HOTKEY: "):]
             if set_clipboard_text(payload):
                 log.info("[clipboard] copied %d chars", len(payload))
@@ -332,7 +363,23 @@ def receiver_loop():
 
 
 def main():
-    threading.Thread(target=receiver_loop, daemon=True).start()
+    log.info("=" * 60)
+    log.info("bridge starting; log at %s", LOG_PATH)
+
+    # Single-instance gate. Bind the result port up front WITHOUT
+    # SO_REUSEADDR: on Windows a second bind then fails, so if another
+    # bridge already owns the port we exit *without installing a hook*.
+    # This is what prevents duplicate hooks (multiplied viewer windows /
+    # repeated pastes) when an old bridge wasn't cleaned up.
+    result_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        result_sock.bind((RESULT_HOST, RESULT_PORT))
+    except OSError as e:
+        log.error("[bridge] result port %s:%d already in use (%s) — another "
+                  "bridge is running; exiting without installing a hook.",
+                  RESULT_HOST, RESULT_PORT, e)
+        return
+    threading.Thread(target=result_listener, args=(result_sock,), daemon=True).start()
 
     h_module = kernel32.GetModuleHandleW(None)
     hook_handle = user32.SetWindowsHookExW(WH_KEYBOARD_LL, _hook_thunk, h_module, 0)
@@ -358,4 +405,13 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # Single artifact, two roles. `--viewer <log>` runs the tkinter log
+    # window; no args runs the bridge. This lets one bridge.exe serve both
+    # (the viewer is re-launched as `bridge.exe --viewer <log>`).
+    if "--viewer" in sys.argv:
+        import viewer  # bundled alongside; resolves in dev via sys.path[0]
+        _i = sys.argv.index("--viewer")
+        _path = sys.argv[_i + 1] if len(sys.argv) > _i + 1 else LOG_PATH
+        viewer.run(_path)
+    else:
+        main()
