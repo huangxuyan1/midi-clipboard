@@ -44,6 +44,8 @@ text file, a notation app — or hand it to an AI and ask for a variation.
 - **Two-way** — clip → clipboard and clipboard → clip.
 - **ABC notation by default** — copies are standard ABC, and paste accepts
   ABC from the web or an LLM. See [ABC notation](#abc-notation).
+- **Chord symbols play** — `"Am"` and friends paste as bass and chord notes,
+  matching what abcjs plays. See [Chord symbols](#chord-symbols).
 - **Lossless native format** — an alternative text format that also keeps
   velocity, probability and exact timing. See
   [Native text format](#native-text-format).
@@ -152,10 +154,38 @@ ABC `C` is middle C (MIDI 60, Ableton `C3`), and times are Live beats
   accidentals, inline fields (`[K:G]`), voices (`V:`, each from beat 0),
   voice overlay (`&`), and repeats with numbered endings, which are written
   out in full.
-- **Ignored:** chord symbols, decorations and dynamics, grace notes, slurs,
-  lyrics, tempo (`Q:`), and part order (`P:`).
+- **Chord symbols** such as `"Dm"` become an accompaniment. See
+  [Chord symbols](#chord-symbols).
+- **Ignored:** decorations and dynamics, grace notes, slurs, lyrics, tempo
+  (`Q:`), and part order (`P:`).
 - Prose and Markdown code fences around the tune are skipped. Only the first
   tune in the clipboard is pasted.
+- Two notes of the same pitch starting together become one, the longer.
+
+### Chord symbols
+
+Pasted chord symbols play the accompaniment the [abcjs](https://www.abcjs.net/)
+library plays, note for note. That is also what the midishare site's piano
+roll shows.
+
+- Each bar plays a pattern set by the meter: in 4/4, bass on beats 1 and 3
+  and the chord on beats 2 and 4. Notes last half a beat (eighths in x/4,
+  sixteenths in x/8).
+- The bass sits between MIDI 33 and 44 (Ableton's A0 to G#1), and the chord
+  starts an octave above it. Slash chords such as `"D/F#"` put the slash note
+  in the bass. Unknown chord types play as major, or minor when they start
+  with `m`.
+- A chord holds until the next symbol, across bar lines. Bars before the
+  first symbol stay silent, and so does a bar with `"break"`. An unknown
+  root, including `"N.C."`, is ignored, so the previous chord keeps playing.
+- A pickup or short last bar plays the chord on alternate eighths only.
+- `%%MIDI gchord` patterns (such as `fzczfzcz`) replace the meter's pattern.
+
+To paste only the written notes, set `CHORD_SYMBOLS = "off"` near the top of
+`MidiClipboard/MidiClipboard.py` and restart Live.
+
+The rules and the chord table are ported from abcjs 6.7.2 (MIT license,
+© Paul Rosen and Gregory Dyke) in `MidiClipboard/chord_track.py`.
 
 ## Choosing the copy format
 

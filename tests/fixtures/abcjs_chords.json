@@ -1,0 +1,7835 @@
+[
+ {
+  "name": "example_4_4_Dm",
+  "abc": "X:1\nT:Example\nM:4/4\nL:1/8\nQ:1/4=90\nK:Dm\n\"Dm\"D2 F2 A2 d2 | \"Bb\"B,2 D2 F2 B2 | \"C\"C2 E2 G2 c2 | \"A\"A,2 ^C2 E2 A2 |]",
+  "total_beats": 16,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 62,
+     "start": 0,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 65,
+     "start": 1,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 69,
+     "start": 2,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 74,
+     "start": 3,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 58,
+     "start": 4,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 62,
+     "start": 5,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 65,
+     "start": 6,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 70,
+     "start": 7,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 60,
+     "start": 8,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 64,
+     "start": 9,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 10,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 72,
+     "start": 11,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 57,
+     "start": 12,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 61,
+     "start": 13,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 64,
+     "start": 14,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 69,
+     "start": 15,
+     "duration": 1,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 38,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 53,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 53,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 34,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 46,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 50,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 53,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 29,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 46,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 50,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 53,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 10,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 12,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 49,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 28,
+     "start": 14,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 49,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "waltz_3_4",
+  "abc": "X:1\nM:3/4\nL:1/8\nK:G\n\"G\"B2 d2 g2 | \"D7\"A2 c2 f2 | \"Em\"G6 | \"C\"e4 \"D\"d2 |]",
+  "total_beats": 12,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 71,
+     "start": 0,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 74,
+     "start": 1,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 79,
+     "start": 2,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 69,
+     "start": 3,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 72,
+     "start": 4,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 78,
+     "start": 5,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 6,
+     "duration": 3,
+     "volume": 105
+    },
+    {
+     "pitch": 76,
+     "start": 9,
+     "duration": 2,
+     "volume": 105
+    },
+    {
+     "pitch": 74,
+     "start": 11,
+     "duration": 1,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 43,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 50,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 40,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 52,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 10,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 10,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 10,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "jig_6_8",
+  "abc": "X:1\nM:6/8\nL:1/8\nK:D\n\"D\"A2A AFA | \"G\"B2B BGB | \"A7\"c2c cde | \"D\"d3 d3 |]",
+  "total_beats": 12,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 69,
+     "start": 0,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 69,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 69,
+     "start": 1.5,
+     "duration": 0.5,
+     "volume": 95
+    },
+    {
+     "pitch": 66,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 69,
+     "start": 2.5,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 71,
+     "start": 3,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 71,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 71,
+     "start": 4.5,
+     "duration": 0.5,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 71,
+     "start": 5.5,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 73,
+     "start": 6,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 73,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 73,
+     "start": 7.5,
+     "duration": 0.5,
+     "volume": 95
+    },
+    {
+     "pitch": 74,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 76,
+     "start": 8.5,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 74,
+     "start": 9,
+     "duration": 1.5,
+     "volume": 105
+    },
+    {
+     "pitch": 74,
+     "start": 10.5,
+     "duration": 1.5,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 38,
+     "start": 0,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 1,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 1,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 1,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 1.5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 2.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 2.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 2.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 3,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 4,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 4,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 4,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 4.5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 5.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 5.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 5.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 6,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 7,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 49,
+     "start": 7,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 7,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 28,
+     "start": 7.5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 8.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 49,
+     "start": 8.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 8.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 8.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 9,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 10,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 10,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 10,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 10.5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 11.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 11.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 11.5,
+     "duration": 0.25,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "polka_2_4",
+  "abc": "X:1\nM:2/4\nL:1/8\nK:G\n\"G\"GA Bc | \"D\"d2 d2 | \"C\"ec \"G\"dB | \"D7\"A4 |]",
+  "total_beats": 8,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 67,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 105
+    },
+    {
+     "pitch": 69,
+     "start": 0.5,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 71,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 95
+    },
+    {
+     "pitch": 72,
+     "start": 1.5,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 74,
+     "start": 2,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 74,
+     "start": 3,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 76,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 105
+    },
+    {
+     "pitch": 72,
+     "start": 4.5,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 74,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 95
+    },
+    {
+     "pitch": 71,
+     "start": 5.5,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 69,
+     "start": 6,
+     "duration": 2,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 43,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 43,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "cut_time",
+  "abc": "X:1\nM:C|\nL:1/8\nK:A\n\"A\"A4 c4 | \"E\"B4 e4 | \"D\"d2 f2 \"A\"e2 c2 | \"E7\"B8 |]",
+  "total_beats": 16,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 69,
+     "start": 0,
+     "duration": 2,
+     "volume": 105
+    },
+    {
+     "pitch": 73,
+     "start": 2,
+     "duration": 2,
+     "volume": 95
+    },
+    {
+     "pitch": 71,
+     "start": 4,
+     "duration": 2,
+     "volume": 105
+    },
+    {
+     "pitch": 76,
+     "start": 6,
+     "duration": 2,
+     "volume": 95
+    },
+    {
+     "pitch": 74,
+     "start": 8,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 78,
+     "start": 9,
+     "duration": 1,
+     "volume": 85
+    },
+    {
+     "pitch": 76,
+     "start": 10,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 73,
+     "start": 11,
+     "duration": 1,
+     "volume": 85
+    },
+    {
+     "pitch": 71,
+     "start": 12,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 33,
+     "start": 0,
+     "duration": 1,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 2,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 49,
+     "start": 2,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 2,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 40,
+     "start": 4,
+     "duration": 1,
+     "volume": 64
+    },
+    {
+     "pitch": 52,
+     "start": 6,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 56,
+     "start": 6,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 6,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 8,
+     "duration": 1,
+     "volume": 64
+    },
+    {
+     "pitch": 33,
+     "start": 10,
+     "duration": 1,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 10,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 49,
+     "start": 10,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 10,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 40,
+     "start": 12,
+     "duration": 1,
+     "volume": 64
+    },
+    {
+     "pitch": 52,
+     "start": 14,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 56,
+     "start": 14,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 14,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 14,
+     "duration": 1,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "common_time_C",
+  "abc": "X:1\nM:C\nL:1/8\nK:F\n\"F\"F2 A2 c2 f2 | \"Bb\"d2 B2 \"C7\"c2 e2 |]",
+  "total_beats": 8,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 65,
+     "start": 0,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 69,
+     "start": 1,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 72,
+     "start": 2,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 77,
+     "start": 3,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 74,
+     "start": 4,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 70,
+     "start": 5,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 72,
+     "start": 6,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 76,
+     "start": 7,
+     "duration": 1,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 41,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 53,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 53,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 34,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 46,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 50,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 53,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 58,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "slip_jig_9_8",
+  "abc": "X:1\nM:9/8\nL:1/8\nK:G\n\"G\"B2B BAG AGE | \"Am\"A2A ABc \"D\"d2A |]",
+  "total_beats": 9,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 71,
+     "start": 0,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 71,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 71,
+     "start": 1.5,
+     "duration": 0.5,
+     "volume": 95
+    },
+    {
+     "pitch": 69,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 67,
+     "start": 2.5,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 69,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 3.5,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 64,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 69,
+     "start": 4.5,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 69,
+     "start": 5.5,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 69,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 95
+    },
+    {
+     "pitch": 71,
+     "start": 6.5,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 72,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 74,
+     "start": 7.5,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 69,
+     "start": 8.5,
+     "duration": 0.5,
+     "volume": 85
+    }
+   ],
+   [
+    {
+     "pitch": 43,
+     "start": 0,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 1,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 1,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 1.5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 2.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 2.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 2.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 3,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 4,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 4,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 4,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 4.5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 5.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 5.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 5.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 28,
+     "start": 6,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 7,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 7,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 7,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 7.5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 8.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 8.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 8.5,
+     "duration": 0.25,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "five_four",
+  "abc": "X:1\nM:5/4\nL:1/8\nK:C\n\"C\"C2 E2 G2 c2 e2 | \"F\"F2 A2 \"G\"G2 B2 d2 |]",
+  "total_beats": 10,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 64,
+     "start": 1,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 2,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 72,
+     "start": 3,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 76,
+     "start": 4,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 65,
+     "start": 5,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 69,
+     "start": 6,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 7,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 71,
+     "start": 8,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 74,
+     "start": 9,
+     "duration": 1,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 41,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 53,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "seven_eight",
+  "abc": "X:1\nM:7/8\nL:1/8\nK:D\n\"D\"D2D F2 A2 | \"A\"A2A c2 e2 |]",
+  "total_beats": 7,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 62,
+     "start": 0,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 62,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 95
+    },
+    {
+     "pitch": 66,
+     "start": 1.5,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 69,
+     "start": 2.5,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 69,
+     "start": 3.5,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 69,
+     "start": 4.5,
+     "duration": 0.5,
+     "volume": 95
+    },
+    {
+     "pitch": 73,
+     "start": 5,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 76,
+     "start": 6,
+     "duration": 1,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 38,
+     "start": 0,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 0.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 0.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 0.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 50,
+     "start": 1,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 1,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 1,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 1.5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 2,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 2,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 2,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 2.5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 3,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 3,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 3,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 3.5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 4,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 49,
+     "start": 4,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 4,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 45,
+     "start": 4.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 49,
+     "start": 4.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 4.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 28,
+     "start": 5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 5.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 49,
+     "start": 5.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 5.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 28,
+     "start": 6,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 6.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 49,
+     "start": 6.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 6.5,
+     "duration": 0.25,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "twelve_eight",
+  "abc": "X:1\nM:12/8\nL:1/8\nK:Am\n\"Am\"A3 c3 e3 a3 | \"E7\"e3 ^g3 b3 e3 |]",
+  "total_beats": 12,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 69,
+     "start": 0,
+     "duration": 1.5,
+     "volume": 105
+    },
+    {
+     "pitch": 72,
+     "start": 1.5,
+     "duration": 1.5,
+     "volume": 95
+    },
+    {
+     "pitch": 76,
+     "start": 3,
+     "duration": 1.5,
+     "volume": 95
+    },
+    {
+     "pitch": 81,
+     "start": 4.5,
+     "duration": 1.5,
+     "volume": 95
+    },
+    {
+     "pitch": 76,
+     "start": 6,
+     "duration": 1.5,
+     "volume": 105
+    },
+    {
+     "pitch": 80,
+     "start": 7.5,
+     "duration": 1.5,
+     "volume": 95
+    },
+    {
+     "pitch": 83,
+     "start": 9,
+     "duration": 1.5,
+     "volume": 95
+    },
+    {
+     "pitch": 76,
+     "start": 10.5,
+     "duration": 1.5,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 33,
+     "start": 0,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 1,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 28,
+     "start": 1.5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 2.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 2.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 2.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 28,
+     "start": 3,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 4,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 4,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 4,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 28,
+     "start": 4.5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 5.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 5.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 5.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 40,
+     "start": 6,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 52,
+     "start": 7,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 56,
+     "start": 7,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 7,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 7,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 35,
+     "start": 7.5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 52,
+     "start": 8.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 56,
+     "start": 8.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 8.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 8.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 35,
+     "start": 9,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 52,
+     "start": 10,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 56,
+     "start": 10,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 10,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 10,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 35,
+     "start": 10.5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 52,
+     "start": 11.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 56,
+     "start": 11.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 11.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 11.5,
+     "duration": 0.25,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "three_eight",
+  "abc": "X:1\nM:3/8\nL:1/8\nK:C\n\"C\"CEG | \"G7\"GBd |]",
+  "total_beats": 3,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 105
+    },
+    {
+     "pitch": 64,
+     "start": 0.5,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 67,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 67,
+     "start": 1.5,
+     "duration": 0.5,
+     "volume": 105
+    },
+    {
+     "pitch": 71,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 74,
+     "start": 2.5,
+     "duration": 0.5,
+     "volume": 85
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 1.5,
+     "duration": 0.25,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 2.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 2.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 2.5,
+     "duration": 0.25,
+     "volume": 48
+    },
+    {
+     "pitch": 65,
+     "start": 2.5,
+     "duration": 0.25,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "unknown_meter_3_2",
+  "abc": "X:1\nM:3/2\nL:1/8\nK:C\n\"C\"C4 E4 G4 | \"G\"G4 B4 d4 |]",
+  "total_beats": 12,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 2,
+     "volume": 105
+    },
+    {
+     "pitch": 64,
+     "start": 2,
+     "duration": 2,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 4,
+     "duration": 2,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 6,
+     "duration": 2,
+     "volume": 105
+    },
+    {
+     "pitch": 71,
+     "start": 8,
+     "duration": 2,
+     "volume": 95
+    },
+    {
+     "pitch": 74,
+     "start": 10,
+     "duration": 2,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 1,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 2,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 2,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 2,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 4,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 4,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 4,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 6,
+     "duration": 1,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 8,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 8,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 8,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 10,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 10,
+     "duration": 1,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 10,
+     "duration": 1,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "chord_types",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n\"C\"C8 | \"Cm\"C8 | \"C7\"C8 | \"Cmaj7\"C8 | \"Cm7\"C8 | \"Cdim\"C8 | \"Csus4\"C8 | \"C6\"C8 | \"Caug\"C8 | \"C9\"C8 | \"Cm7b5\"C8 | \"Cadd9\"C8 |]",
+  "total_beats": 48,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 60,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 60,
+     "start": 8,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 60,
+     "start": 12,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 60,
+     "start": 16,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 60,
+     "start": 20,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 60,
+     "start": 24,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 60,
+     "start": 28,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 60,
+     "start": 32,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 60,
+     "start": 36,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 60,
+     "start": 40,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 60,
+     "start": 44,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 51,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 51,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 58,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 10,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 58,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 12,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 14,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 16,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 51,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 58,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 18,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 51,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 58,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 20,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 21,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 51,
+     "start": 21,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 21,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 30,
+     "start": 22,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 23,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 51,
+     "start": 23,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 23,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 24,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 25,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 53,
+     "start": 25,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 25,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 26,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 27,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 53,
+     "start": 27,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 27,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 28,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 29,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 29,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 29,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 29,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 30,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 31,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 31,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 31,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 31,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 32,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 33,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 33,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 56,
+     "start": 33,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 32,
+     "start": 34,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 35,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 35,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 56,
+     "start": 35,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 36,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 37,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 37,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 37,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 58,
+     "start": 37,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 37,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 38,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 39,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 39,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 39,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 58,
+     "start": 39,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 39,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 40,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 41,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 51,
+     "start": 41,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 41,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 58,
+     "start": 41,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 30,
+     "start": 42,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 43,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 51,
+     "start": 43,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 43,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 58,
+     "start": 43,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 44,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 45,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 45,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 45,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 45,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 46,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 47,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 47,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 47,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 47,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "unknown_type_is_major",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n\"Cfoo\"C8 | \"Gmystery\"G8 |]",
+  "total_beats": 8,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 67,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 58,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 58,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "accidental_roots",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n\"Bb\"B,8 | \"F#m\"F8 | \"Eb7\"E8 | \"C#dim\"C8 | \"Ab\"A,8 | \"G#m\"G8 |]",
+  "total_beats": 24,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 59,
+     "start": 0,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 65,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 64,
+     "start": 8,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 60,
+     "start": 12,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 57,
+     "start": 16,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 67,
+     "start": 20,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 34,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 46,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 50,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 53,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 29,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 46,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 50,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 53,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 42,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 54,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 61,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 37,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 54,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 61,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 39,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 51,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 58,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 61,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 34,
+     "start": 10,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 51,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 58,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 61,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 37,
+     "start": 12,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 49,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 14,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 49,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 32,
+     "start": 16,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 44,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 51,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 27,
+     "start": 18,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 44,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 51,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 44,
+     "start": 20,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 56,
+     "start": 21,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 21,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 63,
+     "start": 21,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 39,
+     "start": 22,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 56,
+     "start": 23,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 23,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 63,
+     "start": 23,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "slash_bass",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n\"D/F#\"D8 | \"C/E\"C8 | \"G/B\"G8 | \"Am/G\"A8 | \"F/Bb\"F8 |]",
+  "total_beats": 20,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 62,
+     "start": 0,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 60,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 67,
+     "start": 8,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 69,
+     "start": 12,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 65,
+     "start": 16,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 42,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 42,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 40,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 40,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 35,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 35,
+     "start": 10,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 12,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 14,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 34,
+     "start": 16,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 53,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 34,
+     "start": 18,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 53,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "two_chords_per_bar",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:G\n\"G\"G2 B2 \"C\"c2 e2 | \"D\"d2 f2 \"G\"g4 |]",
+  "total_beats": 8,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 67,
+     "start": 0,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 71,
+     "start": 1,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 72,
+     "start": 2,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 76,
+     "start": 3,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 74,
+     "start": 4,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 78,
+     "start": 5,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 79,
+     "start": 6,
+     "duration": 2,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 43,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "four_chords_per_bar",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n\"C\"C2 \"F\"F2 \"G\"G2 \"Am\"A2 |]",
+  "total_beats": 4,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 65,
+     "start": 1,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 2,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 69,
+     "start": 3,
+     "duration": 1,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 41,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 53,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 33,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "chord_on_beat_two",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\nC2 \"F\"F2 A2 c2 | \"G\"G8 |]",
+  "total_beats": 8,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 65,
+     "start": 1,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 69,
+     "start": 2,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 72,
+     "start": 3,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 41,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 53,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 53,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "chord_off_the_beat",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n\"C\"C3 \"G\"G E2 G2 | \"F\"F \"Am\"A6 A |]",
+  "total_beats": 8,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 1.5,
+     "volume": 105
+    },
+    {
+     "pitch": 67,
+     "start": 1.5,
+     "duration": 0.5,
+     "volume": 85
+    },
+    {
+     "pitch": 64,
+     "start": 2,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 3,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 65,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 105
+    },
+    {
+     "pitch": 69,
+     "start": 4.5,
+     "duration": 3,
+     "volume": 85
+    },
+    {
+     "pitch": 69,
+     "start": 7.5,
+     "duration": 0.5,
+     "volume": 85
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 1.5,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 43,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 41,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 33,
+     "start": 4.5,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "chord_carries_over_bars",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n\"Am\"A8 | c8 | e8 | \"E\"e8 |]",
+  "total_beats": 16,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 69,
+     "start": 0,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 72,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 76,
+     "start": 8,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 76,
+     "start": 12,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 33,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 28,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 28,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 28,
+     "start": 10,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 40,
+     "start": 12,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 52,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 56,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 35,
+     "start": 14,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 52,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 56,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "no_chord_in_first_bars",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\nC8 | E8 | \"G\"G8 | B8 |]",
+  "total_beats": 16,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 64,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 67,
+     "start": 8,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 71,
+     "start": 12,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 43,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 10,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 12,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 14,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "pickup_bar",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:G\nD2 | \"G\"G2 B2 d2 g2 | \"D\"f2 d2 A2 F2 |]",
+  "total_beats": 9,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 62,
+     "start": 0,
+     "duration": 1,
+     "volume": 85
+    },
+    {
+     "pitch": 67,
+     "start": 1,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 71,
+     "start": 2,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 74,
+     "start": 3,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 79,
+     "start": 4,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 78,
+     "start": 5,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 74,
+     "start": 6,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 69,
+     "start": 7,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 66,
+     "start": 8,
+     "duration": 1,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 43,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "pickup_bar_with_chord",
+  "abc": "X:1\nM:3/4\nL:1/8\nK:G\n\"D7\"D2 | \"G\"G2 B2 d2 | \"C\"e2 c2 G2 |]",
+  "total_beats": 7,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 62,
+     "start": 0,
+     "duration": 1,
+     "volume": 85
+    },
+    {
+     "pitch": 67,
+     "start": 1,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 71,
+     "start": 2,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 74,
+     "start": 3,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 76,
+     "start": 4,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 72,
+     "start": 5,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 6,
+     "duration": 1,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 50,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "short_last_bar",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n\"C\"C2 E2 G2 c2 | \"G\"G4 |]",
+  "total_beats": 6,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 64,
+     "start": 1,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 2,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 72,
+     "start": 3,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 4,
+     "duration": 2,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "no_chord_marks",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n\"C\"C8 | \"N.C.\"z8 | \"G\"G8 | \"break\"z8 | \"C\"C8 |]",
+  "total_beats": 20,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 67,
+     "start": 8,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 60,
+     "start": 16,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 10,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 16,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 18,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "chord_on_rest",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n\"C\"z8 | \"F\"z4 \"G\"z4 |]",
+  "total_beats": 8,
+  "chord_track": 1,
+  "tracks": [
+   [],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 41,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 53,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "annotations_are_not_chords",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n\"^above\"C4 \"_below\"E4 | \"<left\"G4 \"C\"c4 |]",
+  "total_beats": 8,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 2,
+     "volume": 105
+    },
+    {
+     "pitch": 64,
+     "start": 2,
+     "duration": 2,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 4,
+     "duration": 2,
+     "volume": 105
+    },
+    {
+     "pitch": 72,
+     "start": 6,
+     "duration": 2,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 31,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "parenthesised_chord",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n\"(Am)\"A8 | \"(D7)\"d8 |]",
+  "total_beats": 8,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 69,
+     "start": 0,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 74,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 33,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 28,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 45,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "repeats",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:G\n|: \"G\"G4 B4 | \"D\"d8 :| \"C\"c8 |]",
+  "total_beats": 20,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 67,
+     "start": 0,
+     "duration": 2,
+     "volume": 105
+    },
+    {
+     "pitch": 71,
+     "start": 2,
+     "duration": 2,
+     "volume": 95
+    },
+    {
+     "pitch": 74,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 67,
+     "start": 8,
+     "duration": 2,
+     "volume": 105
+    },
+    {
+     "pitch": 71,
+     "start": 10,
+     "duration": 2,
+     "volume": 95
+    },
+    {
+     "pitch": 74,
+     "start": 12,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 72,
+     "start": 16,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 43,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 10,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 12,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 14,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 16,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 17,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 18,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 19,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "first_second_endings",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:G\n|: \"G\"G8 |1 \"D\"d8 :|2 \"C\"c8 |]",
+  "total_beats": 16,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 67,
+     "start": 0,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 74,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 67,
+     "start": 8,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 72,
+     "start": 12,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 43,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 33,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 50,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 54,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 10,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 12,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 14,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 15,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "unit_length_sixteenth",
+  "abc": "X:1\nM:4/4\nL:1/16\nK:C\n\"C\"C4 E4 G4 c4 | \"F\"F8 \"G\"G8 |]",
+  "total_beats": 8,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 64,
+     "start": 1,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 2,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 72,
+     "start": 3,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 65,
+     "start": 4,
+     "duration": 2,
+     "volume": 105
+    },
+    {
+     "pitch": 67,
+     "start": 6,
+     "duration": 2,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 41,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 53,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "unit_length_quarter",
+  "abc": "X:1\nM:4/4\nL:1/4\nK:C\n\"C\"C E G c | \"F\"F2 \"G\"G2 |]",
+  "total_beats": 8,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 1,
+     "volume": 105
+    },
+    {
+     "pitch": 64,
+     "start": 1,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 67,
+     "start": 2,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 72,
+     "start": 3,
+     "duration": 1,
+     "volume": 95
+    },
+    {
+     "pitch": 65,
+     "start": 4,
+     "duration": 2,
+     "volume": 105
+    },
+    {
+     "pitch": 67,
+     "start": 6,
+     "duration": 2,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 41,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 53,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "two_voices_chords_in_first",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\nV:1\n\"C\"c4 e4 | \"G\"d8 |]\nV:2\nC,8 | G,,8 |]",
+  "total_beats": 8,
+  "chord_track": 2,
+  "tracks": [
+   [
+    {
+     "pitch": 72,
+     "start": 0,
+     "duration": 2,
+     "volume": 105
+    },
+    {
+     "pitch": 76,
+     "start": 2,
+     "duration": 2,
+     "volume": 95
+    },
+    {
+     "pitch": 74,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 48,
+     "start": 0,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 43,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "two_voices_chords_in_second",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\nV:1\nc4 e4 | d8 |]\nV:2\n\"C\"C,8 | \"G\"G,,8 |]",
+  "total_beats": 8,
+  "chord_track": 2,
+  "tracks": [
+   [
+    {
+     "pitch": 72,
+     "start": 0,
+     "duration": 2,
+     "volume": 105
+    },
+    {
+     "pitch": 76,
+     "start": 2,
+     "duration": 2,
+     "volume": 95
+    },
+    {
+     "pitch": 74,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 48,
+     "start": 0,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 43,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "meter_change",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n\"C\"C8 | [M:3/4] \"F\"F6 | \"G\"G6 | [M:4/4] \"C\"c8 |]",
+  "total_beats": 14,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 65,
+     "start": 4,
+     "duration": 3,
+     "volume": 105
+    },
+    {
+     "pitch": 67,
+     "start": 7,
+     "duration": 3,
+     "volume": 105
+    },
+    {
+     "pitch": 72,
+     "start": 10,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 41,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 53,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 53,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 10,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 12,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 13,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "tied_melody_under_chords",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n\"C\"c8- | \"F\"c8- | \"G\"c4 d4 |]",
+  "total_beats": 12,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 72,
+     "start": 0,
+     "duration": 10,
+     "volume": 105
+    },
+    {
+     "pitch": 74,
+     "start": 10,
+     "duration": 2,
+     "volume": 95
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 41,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 53,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 53,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 57,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 60,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 8,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 9,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 10,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 11,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "triplet_melody",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n\"C\"(3cde (3fga \"G\"g4 | \"C\"c8 |]",
+  "total_beats": 8,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 72,
+     "start": 0,
+     "duration": 0.333332,
+     "volume": 105
+    },
+    {
+     "pitch": 74,
+     "start": 0.333332,
+     "duration": 0.333332,
+     "volume": 85
+    },
+    {
+     "pitch": 76,
+     "start": 0.666664,
+     "duration": 0.333336,
+     "volume": 85
+    },
+    {
+     "pitch": 77,
+     "start": 1,
+     "duration": 0.333332,
+     "volume": 95
+    },
+    {
+     "pitch": 79,
+     "start": 1.333332,
+     "duration": 0.333332,
+     "volume": 85
+    },
+    {
+     "pitch": 81,
+     "start": 1.666664,
+     "duration": 0.333336,
+     "volume": 85
+    },
+    {
+     "pitch": 79,
+     "start": 2,
+     "duration": 2,
+     "volume": 95
+    },
+    {
+     "pitch": 72,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 36,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "gchord_override",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n%%MIDI gchord fzczfzcz\n\"C\"C8 | \"G\"G8 |]",
+  "total_beats": 8,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 67,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 36,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 31,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 48,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 43,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 38,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 64
+    },
+    {
+     "pitch": 55,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 59,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 62,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ },
+ {
+  "name": "gchord_arpeggio",
+  "abc": "X:1\nM:4/4\nL:1/8\nK:C\n%%MIDI gchord GHIHGHIH\n\"C\"C8 | \"Am\"A8 |]",
+  "total_beats": 8,
+  "chord_track": 1,
+  "tracks": [
+   [
+    {
+     "pitch": 60,
+     "start": 0,
+     "duration": 4,
+     "volume": 105
+    },
+    {
+     "pitch": 69,
+     "start": 4,
+     "duration": 4,
+     "volume": 105
+    }
+   ],
+   [
+    {
+     "pitch": 48,
+     "start": 0,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 0.5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 1,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 1.5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 2,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 2.5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 55,
+     "start": 3,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 3.5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 45,
+     "start": 4,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 4.5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 5.5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 45,
+     "start": 6,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 6.5,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 52,
+     "start": 7,
+     "duration": 0.5,
+     "volume": 48
+    },
+    {
+     "pitch": 48,
+     "start": 7.5,
+     "duration": 0.5,
+     "volume": 48
+    }
+   ]
+  ]
+ }
+]

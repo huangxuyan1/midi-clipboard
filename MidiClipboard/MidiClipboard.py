@@ -31,6 +31,11 @@ BRIDGE_VISIBLE = False
 # Paste reads either format regardless of this setting.
 COPY_FORMAT = "abc"
 
+# What pasting ABC does with chord symbols such as "Dm": "abcjs" adds the
+# bass-and-chord accompaniment the abcjs library plays (the notes the midishare
+# site's piano roll shows); "off" ignores them and pastes only the written notes.
+CHORD_SYMBOLS = "abcjs"
+
 PYTHON_EXE = "python"
 BRIDGE_SCRIPT = "bridge.py"
 # Windows: a PyInstaller onefile exe. Mac: a PyInstaller onedir folder, since
@@ -269,7 +274,7 @@ class MidiClipboard(ControlSurface):
             if abc_serde.looks_like_abc(text):
                 fmt = "ABC"
                 specs = [Live.Clip.MidiNoteSpecification(**n)
-                         for n in abc_serde.parse_abc(text)]
+                         for n in abc_serde.parse_abc(text, chords=CHORD_SYMBOLS)]
             else:
                 fmt = "text"
                 specs = notes_serde.parse_text(text)

@@ -1,3 +1,4 @@
+import json
 import os
 import random
 import sys
@@ -124,6 +125,36 @@ class StructureTests(unittest.TestCase):
     def test_voices_start_together(self):
         self.assertEqual(tune("V:1\nc2\nV:2\nC,2"), [(48, 0, 2), (72, 0, 2)])
 
+    def test_chord_symbols_written_out_as_a_bass_voice(self):
+        # The midishare site copies "Dm" "Bb" "C" "A" as real notes in V:2, the
+        # 48 notes its piano roll shows (abcjs's accompaniment, snapped to 16ths).
+        notes = tune(
+            "V:1\n"
+            "D2 F2 A2 d2 | B,2 D2 F2 B2 | C2 E2 G2 c2 | A,2 _D2 E2 A2 |]\n"
+            "V:2 clef=bass\n"
+            "D,, z [D,F,A,] z A,,, z [D,F,A,] z | B,,, z [B,,D,F,] z F,,, z [B,,D,F,] z | "
+            "C,, z [C,E,G,] z G,,, z [C,E,G,] z | A,,, z [A,,_D,E,] z E,,, z [A,,D,E,] z |]",
+            header="M:4/4\nL:1/8\nK:Dm",
+        )
+        melody = [62, 65, 69, 74, 58, 62, 65, 70, 60, 64, 67, 72, 57, 61, 64, 69]
+        expected = [(pitch, beat, 1) for beat, pitch in enumerate(melody)]
+        # Per bar: root, chord, fifth, chord, each an eighth. The last bar's
+        # plain D, is still Db from the _D, earlier in that bar.
+        bass = [
+            (38, [50, 53, 57], 33),  # Dm
+            (34, [46, 50, 53], 29),  # Bb
+            (36, [48, 52, 55], 31),  # C
+            (33, [45, 49, 52], 28),  # A
+        ]
+        for bar, (root, chord, fifth) in enumerate(bass):
+            beat = 4 * bar
+            expected.append((root, beat, 0.5))
+            expected.extend((pitch, beat + 1, 0.5) for pitch in chord)
+            expected.append((fifth, beat + 2, 0.5))
+            expected.extend((pitch, beat + 3, 0.5) for pitch in chord)
+        self.assertEqual(len(notes), 48)
+        self.assertEqual(sorted(notes), sorted(expected))
+
     def test_inline_fields(self):
         self.assertEqual(tune("C [K:D] F [L:1/8] C"), [(60, 0, 1), (66, 1, 1), (61, 2, 0.5)])
 
@@ -135,9 +166,54 @@ class StructureTests(unittest.TestCase):
 
     def test_annotations_decorations_and_grace_notes_ignored(self):
         self.assertEqual(
-            tune('"Am"!f!.A ~B {g}c'),
+            tune('"^lively"!f!.A ~B {g}c'),
             [(69, 0, 1), (71, 1, 1), (72, 2, 1)],
         )
+
+
+def _as_roll(notes):
+    """One note per pitch and start, the longest, as the midishare piano roll shows them."""
+    longest = {}
+    for pitch, start, duration in notes:
+        slot = (pitch, round(start, 4))
+        longest[slot] = max(longest.get(slot, 0), round(duration, 4))
+    return sorted((pitch, start, duration) for (pitch, start), duration in longest.items())
+
+
+class ChordSymbolTests(unittest.TestCase):
+    def test_matches_abcjs(self):
+        # Every track abcjs 6.7.2 plays for 40 tunes, accompaniment included,
+        # made by tests/fixtures/gen_abcjs_chords.ts.
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures", "abcjs_chords.json")
+        with open(path, encoding="utf-8") as f:
+            cases = json.load(f)
+        self.assertEqual(len(cases), 40)
+        for case in cases:
+            with self.subTest(case["name"]):
+                abcjs = [(n["pitch"], n["start"], n["duration"]) for track in case["tracks"] for n in track]
+                self.assertEqual(_as_roll(parse(case["abc"])), _as_roll(abcjs))
+
+    def test_accompaniment(self):
+        # 4/4 plays boom . chick . boom . chick . in eighths; the second boom is a fourth below.
+        self.assertEqual(
+            tune('"G"z8 |]', header="M:4/4\nL:1/8\nK:C"),
+            [(43, 0, 0.5), (55, 1, 0.5), (59, 1, 0.5), (62, 1, 0.5),
+             (38, 2, 0.5), (55, 3, 0.5), (59, 3, 0.5), (62, 3, 0.5)],
+        )
+
+    def test_off_ignores_chord_symbols(self):
+        notes = abc_serde.parse_abc('X:1\nM:4/4\nL:1/8\nK:Dm\n"Dm"D2 F2 A2 d2 |]', chords="off")
+        self.assertEqual([n["pitch"] for n in notes], [62, 65, 69, 74])
+
+    def test_unknown_mode_is_an_error(self):
+        with self.assertRaises(ValueError):
+            abc_serde.parse_abc("X:1\nK:C\nC", chords="block")
+
+    def test_same_pitch_and_start_keeps_the_longer(self):
+        # The C bass (MIDI 36) on beat 0 lands on the melody's C,, and merges into it.
+        notes = tune('"C"C,,8 |]', header="M:4/4\nL:1/8\nK:C")
+        self.assertIn((36, 0, 4), notes)
+        self.assertNotIn((36, 0, 0.5), notes)
 
 
 class ExtractionTests(unittest.TestCase):

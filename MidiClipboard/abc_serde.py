@@ -7,6 +7,16 @@ are Live beats (quarter notes); ABC ``C`` is MIDI 60.
 import re
 from fractions import Fraction
 
+try:
+    from . import chord_track
+except ImportError:  # imported as a top-level module, as the tests do
+    import chord_track
+
+
+# What parse_abc does with chord symbols such as "Dm": "abcjs" plays them as
+# the abcjs library does (bass and chord on a beat pattern, the notes the
+# midishare site's piano roll shows); "off" ignores them.
+CHORD_MODES = ("abcjs", "off")
 
 _BEATS_PER_WHOLE = 4
 _SEMITONE = {"C": 0, "D": 2, "E": 4, "F": 5, "G": 7, "A": 9, "B": 11}
@@ -37,6 +47,7 @@ _BAR_RE = re.compile(r"(:*)(\[\||\|\]|\|\||\|)(:*)(?:\[?(\d+(?:[,-]\d+)*))?")
 _DOUBLE_COLON_RE = re.compile(r"::+")
 _TUPLET_RE = re.compile(r"\(([2-9])(?::(\d*))?(?::(\d*))?")
 _BROKEN_RE = re.compile(r">+|<+")
+_MIDI_RE = re.compile(r"^%%MIDI\s+(gchordoff|gchordon|gchord)\b\s*(\S*)")
 
 # Quoted text, decorations, inline fields and grace notes can hold any letter,
 # so strip them before deciding whether a line is music or trailing prose.
@@ -51,17 +62,36 @@ def looks_like_abc(text):
     return _KEY_LINE_RE.search(text) is not None
 
 
-def parse_abc(text):
-    """Parse the first ABC tune in ``text`` into ``{pitch, start_time, duration}`` dicts."""
+def parse_abc(text, chords="abcjs"):
+    """Parse the first ABC tune in ``text`` into ``{pitch, start_time, duration}`` dicts.
+
+    ``chords`` is one of CHORD_MODES and says what chord symbols become.
+    """
+    if chords not in CHORD_MODES:
+        raise ValueError("chords must be one of {}, not {!r}".format(CHORD_MODES, chords))
     header, body = _split_tune(text)
-    meter, unit, key = _header_state(header)
+    meter, unit, key, gchord = _header_state(header)
     tokenizer = _Tokenizer()
     for line in body:
         tokenizer.feed(line)
+    track = chord_track.ChordTrack(gchord) if chords == "abcjs" else None
     notes = []
     for events in tokenizer.voices.values():
-        notes.extend(_Renderer(meter, unit, key).run(_unroll(events)))
-    notes.sort(key=lambda n: (n["start"], n["pitch"]))
+        if track is not None:
+            track.start_voice()
+        notes.extend(_Renderer(meter, unit, key, track).run(_unroll(events)))
+        if track is not None:
+            track.finish_voice()
+    if track is not None:
+        notes.extend(track.notes)
+    # Two notes of one pitch can't start together in a clip; keep the longer,
+    # as the midishare site's piano roll does.
+    longest = {}
+    for note in notes:
+        slot = (note["pitch"], note["start"])
+        if slot not in longest or note["duration"] > longest[slot]["duration"]:
+            longest[slot] = note
+    notes = sorted(longest.values(), key=lambda n: (n["start"], n["pitch"]))
     return [
         {
             "pitch": n["pitch"],
@@ -87,7 +117,7 @@ def _split_tune(text):
     for ln in lines[k + 1:]:
         if ln.startswith("```") or ln.startswith("X:"):
             break
-        if not ln or ln.startswith("%"):
+        if not ln or (ln.startswith("%") and not _MIDI_RE.match(ln)):
             continue
         if not _FIELD_RE.match(ln) and not _MUSIC_LINE_RE.match(_NOISE_RE.sub("", ln)):
             break
@@ -96,8 +126,11 @@ def _split_tune(text):
 
 
 def _header_state(header):
-    meter, unit, key = None, None, {}
+    meter, unit, key, gchord = None, None, {}, None
     for ln in header:
+        m = _MIDI_RE.match(ln)
+        if m and m.group(1) == "gchord":
+            gchord = m.group(2)
         m = _FIELD_RE.match(ln)
         if m is None:
             continue
@@ -111,7 +144,7 @@ def _header_state(header):
     if unit is None:
         short_meter = meter is not None and Fraction(*meter) < Fraction(3, 4)
         unit = Fraction(1, 16) if short_meter else Fraction(1, 8)
-    return meter, unit, key
+    return meter, unit, key, gchord
 
 
 def _field_value(raw):
@@ -189,6 +222,10 @@ class _Tokenizer(object):
         self.events = self.voices[""]
 
     def feed(self, line):
+        m = _MIDI_RE.match(line)
+        if m:
+            self.events.append(("midi", m.group(1), m.group(2)))
+            return
         m = _FIELD_RE.match(line)
         if m:
             self._field(m.group(1), _field_value(m.group(2)))
@@ -209,7 +246,16 @@ class _Tokenizer(object):
         emit = self.events.append
         if char == "%":
             return len(line)
-        if char in '"!+{':
+        if char == '"':
+            end = line.find('"', pos + 1)
+            if end < 0:
+                return pos + 1
+            emit(("symbol", line[pos + 1:end]))
+            return end + 1
+        if char == "y":  # a spacer: abcjs drops any chord symbol on it
+            emit(("spacer",))
+            return pos + 1
+        if char in "!+{":
             end = line.find("}" if char == "{" else char, pos + 1)
             return end + 1 if end >= 0 else pos + 1
         if char == "[":
@@ -333,8 +379,11 @@ def _ending_ahead(events, i, pass_no):
 class _Renderer(object):
     """Walks one voice's events, tracking time, key, accidentals and ties."""
 
-    def __init__(self, meter, unit, key):
+    def __init__(self, meter, unit, key, chords=None):
         self.meter, self.unit, self.key = meter, unit, key
+        self.chords = chords  # a chord_track.ChordTrack, or None to ignore chord symbols
+        self.symbols = []  # quoted strings waiting for the next note or rest
+        self.elements_in_bar = 0
         self.notes = []
         self.t = self.bar_start = Fraction(0)
         self.overlay_end = None
@@ -364,6 +413,31 @@ class _Renderer(object):
             self.t = max(self.t, self.overlay_end)
             self.overlay_end = None
         self.bar_start = self.t
+        # Like abcjs, count a bar line only after a note or rest.
+        if self.elements_in_bar and self.chords is not None:
+            self.chords.bar(self.t, self.meter)
+        self.elements_in_bar = 0
+
+    def _symbol(self, text):
+        chord_track.add_symbol(self.symbols, text)
+
+    def _spacer(self):
+        self.symbols = []
+
+    def _midi(self, command, value):
+        if self.chords is None:
+            return
+        if command == "gchord":
+            self.chords.set_pattern(value)
+        else:
+            self.chords.set_tacet(command == "gchordoff")
+
+    def _element(self):
+        """A note, chord or rest starts now; hand it the chord symbols written before it."""
+        self.elements_in_bar += 1
+        if self.chords is not None:
+            self.chords.element(self.symbols, self.t)
+        self.symbols = []
 
     def _overlay(self):
         self.overlay_end = self.t if self.overlay_end is None else max(self.t, self.overlay_end)
@@ -391,18 +465,21 @@ class _Renderer(object):
         self.last = None
 
     def _mrest(self, bars):
+        self._element()
         bar_length = Fraction(*self.meter) if self.meter else Fraction(1)
         self.t += bars * bar_length
         self.ties = {}
         self.last = None
 
     def _rest(self, length):
+        self._element()
         advance = self.unit * length * self._factor()
         self.last = (self.t, advance, [])
         self.ties = {}
         self.t += advance
 
     def _notes(self, entries, multiplier):
+        self._element()
         factor = self._factor()
         start = self.t
         advance = None
