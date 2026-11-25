@@ -58,46 +58,111 @@ text file, a notation app — or hand it to an AI and ask for a variation.
 
 ## Install
 
-### Windows
+MidiClipboard is an Ableton *remote script*: a folder you drop into Live's
+`Remote Scripts` folder and switch on in Live's preferences. It takes about
+five minutes, and there's nothing else to install. The background helper
+carries its own Python.
 
-1. Download/copy the **`MidiClipboard`** folder (it includes the prebuilt
-   `bridge.exe`) into Ableton's user remote-scripts folder:
+### 1. Download
+
+Get the zip for your computer from the
+[latest release](https://github.com/huangxuyan1/midi-clipboard/releases/latest):
+
+| Computer | File |
+|---|---|
+| Windows 10 or 11 | [`MidiClipboard-Windows.zip`](https://github.com/huangxuyan1/midi-clipboard/releases/latest/download/MidiClipboard-Windows.zip) |
+| Mac with macOS 10.15 or later (Apple Silicon or Intel) | [`MidiClipboard-macOS.zip`](https://github.com/huangxuyan1/midi-clipboard/releases/latest/download/MidiClipboard-macOS.zip) |
+
+Each zip holds a single folder, `MidiClipboard`.
+
+### 2. Put the folder in Live's Remote Scripts folder
+
+**Windows**
+
+1. Right-click `MidiClipboard-Windows.zip` and choose **Properties**. If
+   there's an **Unblock** checkbox near the bottom, tick it and click
+   **OK**. Otherwise Windows may treat the helper as an untrusted download.
+2. Right-click the zip and choose **Extract All…**.
+3. Open the extracted folder and move the **`MidiClipboard`** folder inside
+   it (the one that contains `MidiClipboard.py` and `bridge.exe`) into:
    ```text
-   C:\Users\<you>\Documents\Ableton\User Library\Remote Scripts\MidiClipboard\
+   C:\Users\<you>\Documents\Ableton\User Library\Remote Scripts\
    ```
-2. In Ableton: **Preferences → Link/Tempo/MIDI → Control Surface →
-   `MidiClipboard`**. Leave **Input** and **Output** set to **None**.
-3. The status bar briefly shows **`MidiClipboard ready`**. Done — no other
-   dependencies.
+   Create the `Remote Scripts` folder if it doesn't exist. You should end up
+   with `Remote Scripts\MidiClipboard\MidiClipboard.py`, not one folder
+   deeper. If you moved your User Library, use that location instead. Live
+   shows it under **Preferences → Library**.
 
-### macOS
+**Mac, using Terminal (simplest)**
 
-1. Copy the **`MidiClipboard`** folder (it includes the prebuilt
-   `bridge-macos` helper) to:
-   ```text
-   ~/Music/Ableton/User Library/Remote Scripts/MidiClipboard/
+Open **Terminal** and paste these four lines. They download the zip and
+unpack it straight into place:
+
+```bash
+mkdir -p ~/Music/Ableton/User\ Library/Remote\ Scripts
+cd ~/Music/Ableton/User\ Library/Remote\ Scripts
+curl -LO https://github.com/huangxuyan1/midi-clipboard/releases/latest/download/MidiClipboard-macOS.zip
+unzip -q MidiClipboard-macOS.zip && rm MidiClipboard-macOS.zip
+```
+
+**Mac, using the browser and Finder**
+
+1. Download `MidiClipboard-macOS.zip` and double-click it to unzip.
+2. In Finder choose **Go → Go to Folder…**, enter
+   `~/Music/Ableton/User Library/Remote Scripts`, and move the
+   **`MidiClipboard`** folder there. Create `Remote Scripts` if it doesn't
+   exist.
+3. The helper isn't notarized by Apple, so macOS refuses to run a copy that
+   came from a browser download. Clear that mark by pasting this into
+   **Terminal**:
+   ```bash
+   xattr -dr com.apple.quarantine ~/Music/Ableton/User\ Library/Remote\ Scripts/MidiClipboard
    ```
-   Create the `Remote Scripts` folder if it doesn't exist. Use `git clone`
-   rather than a zip download: macOS quarantines downloaded zips, and the
-   helper isn't notarized.
-2. In Ableton: **Live → Preferences** (**Settings** in Live 12) **→
-   Link/Tempo/MIDI → Control Surface → `MidiClipboard`**. Leave **Input**
-   and **Output** set to **None**.
-3. **Allow keystroke monitoring.** The helper listens for the shortcuts, so
-   macOS asks whether **Ableton Live** may *receive keystrokes from any
-   application*. Turn on **Ableton Live** in **System Settings → Privacy &
-   Security → Input Monitoring**, then quit and reopen Live. The listener
-   only acts on the three shortcuts below while Live is frontmost, and it
-   never blocks or changes a keystroke.
-4. The status bar briefly shows **`MidiClipboard ready`**. The very first
-   start after installing takes about 20 seconds while macOS checks the
-   helper's bundled libraries; after that it starts instantly.
+
+### 3. Switch it on in Live
+
+1. Start Live, or quit and restart it if it was open. Live only looks for
+   new remote scripts when it starts.
+2. Open Live's preferences (**Options → Preferences** on Windows, **Live →
+   Settings** on a Mac; **Ctrl+,** / **Cmd+,**) and go to the
+   **Link/Tempo/MIDI** tab (**Link, Tempo & MIDI** in Live 12).
+3. In an empty **Control Surface** slot choose **MidiClipboard**. Leave its
+   **Input** and **Output** set to **None**.
+4. Live's status bar briefly shows **`MidiClipboard ready`**.
+
+### 4. Mac only: allow Input Monitoring
+
+The helper listens for the three shortcuts, so macOS asks whether **Ableton
+Live** may *receive keystrokes from any application*. Turn on **Ableton
+Live** in **System Settings → Privacy & Security → Input Monitoring**, then
+quit and reopen Live. If Live isn't in the list, click **+** and add it from
+`/Applications`. The listener reacts only to the three shortcuts, only while
+Live is in front, and it can't block or change a keystroke.
+
+The very first start after installing takes about 20 seconds while macOS
+checks the helper's bundled libraries. After that it starts at once.
+
+### 5. Check that it works
+
+With Live in front, press **Ctrl+Shift+L** (**Cmd+Shift+L** on a Mac). A
+small log window opens showing the helper's recent activity, including a
+line such as `STATUS: MidiClipboard activated (trigger_bind=ok, bridge=ok …)`
+from when Live started. If no window opens, see
+[Troubleshooting](#troubleshooting).
+
+### Updating and uninstalling
+
+- **Update:** quit Live, delete the old `MidiClipboard` folder, install the
+  new one as above, and start Live. If you changed any
+  [settings](#settings), make the same changes again in the new copy.
+- **Uninstall:** set the Control Surface slot back to **None**, quit Live,
+  and delete the `MidiClipboard` folder.
 
 ## Usage
 
 | Windows | Mac | Where | Action |
 |---|---|---|---|
-| **Ctrl + C** | **Cmd + C** | MIDI editor, notes selected | Ableton's normal copy **plus** the selected notes are written to the clipboard as ABC (or native text, see [Choosing the copy format](#choosing-the-copy-format)). Nothing selected → behaves like plain copy, clipboard untouched. |
+| **Ctrl + C** | **Cmd + C** | MIDI editor, notes selected | Ableton's normal copy **plus** the selected notes are written to the clipboard as ABC (or native text, see [Settings](#settings)). Nothing selected → behaves like plain copy, clipboard untouched. |
 | **Ctrl + Shift + V** | **Cmd + Shift + V** | a MIDI clip open in detail view | Reads the clipboard (ABC or native text, detected automatically), parses the notes, and inserts them into the clip (Ctrl+Z / Cmd+Z to undo). |
 | **Ctrl + Shift + L** | **Cmd + Shift + L** | anywhere in Ableton | Opens a small live-updating log window so you can see what the helper is doing. Close it any time. |
 
@@ -108,6 +173,66 @@ and AZERTY, but not on Dvorak.
 The background helper starts automatically when Ableton loads the script
 and shuts down when you deactivate it (or quit Live). It logs to
 `MidiClipboard/bridge.log`.
+
+### Copy notes out of Live
+
+1. Double-click a MIDI clip so it opens in the detail view at the bottom of
+   Live.
+2. Select notes in the MIDI editor: click them, drag a box around them, or
+   press **Ctrl+A** / **Cmd+A** for all of them.
+3. Press **Ctrl+C** / **Cmd+C**. Live copies the notes as usual, and your
+   system clipboard now also holds them as ABC text.
+4. Paste the text anywhere: a chat, an email, a notation site, or a prompt
+   to an AI model.
+
+With no notes selected, the shortcut is just Live's normal copy and the
+clipboard is left alone. Muted notes are left out of the ABC.
+
+### Paste notes into Live
+
+1. Copy some ABC text: a tune from a website, an AI model's reply, or
+   something you copied out of Live. Any explanation or Markdown code fence
+   around the tune is skipped.
+2. In Live, open the MIDI clip that should receive the notes so it shows in
+   the detail view. For a new clip, double-click an empty clip slot on a MIDI
+   track.
+3. Click anywhere in Live so it's the window in front, then press
+   **Ctrl+Shift+V** / **Cmd+Shift+V**.
+4. The notes appear in the clip, starting at its first beat. Paste adds to
+   what's already in the clip, and **Ctrl+Z** / **Cmd+Z** takes it back out.
+
+If the tune is longer than the clip, lengthen the clip (or its loop) to hear
+the rest. Chord symbols such as `"Am"` become a bass-and-chord
+accompaniment; see [Chord symbols](#chord-symbols). Text in the
+[native format](#native-text-format) pastes the same way.
+
+To try it, copy the triad example at the top of this page and paste it into
+an empty clip.
+
+### Use it with an AI model
+
+- Ask for music in ABC: *"Write an 8-bar melody in D minor in ABC notation,
+  with chord symbols."* Copy the reply and paste it into a clip.
+- Or copy a few bars out of Live, paste them into the chat, and ask for a
+  harmony line, a variation or a bassline. Then paste the answer back.
+
+### Read the log
+
+**Ctrl+Shift+L** / **Cmd+Shift+L** opens the log window. Every copy and
+paste adds a line, such as `pasted 48 notes (ABC) into 'Verse'`, or says why
+nothing happened, such as `copy ignored (no notes selected)`. The same lines
+are saved in `MidiClipboard/bridge.log`.
+
+## Settings
+
+Settings live near the top of `MidiClipboard/MidiClipboard.py`. Open it in
+any text editor, change the value, save, and restart Live.
+
+| Setting | Default | What it does |
+|---|---|---|
+| `COPY_FORMAT` | `"abc"` | What copy writes: `"abc"` for ABC notation, or `"text"` for the lossless [native format](#native-text-format), which also keeps velocity, probability and exact timing. Paste reads both either way. |
+| `CHORD_SYMBOLS` | `"abcjs"` | What paste does with chord symbols: `"abcjs"` plays them as an accompaniment, `"off"` pastes only the written notes. See [Chord symbols](#chord-symbols). |
+| `BRIDGE_VISIBLE` | `False` | Windows only: `True` shows the helper's console window. |
 
 ## ABC notation
 
@@ -181,17 +306,11 @@ roll shows.
 - A pickup or short last bar plays the chord on alternate eighths only.
 - `%%MIDI gchord` patterns (such as `fzczfzcz`) replace the meter's pattern.
 
-To paste only the written notes, set `CHORD_SYMBOLS = "off"` near the top of
-`MidiClipboard/MidiClipboard.py` and restart Live.
+To paste only the written notes, set `CHORD_SYMBOLS = "off"` (see
+[Settings](#settings)).
 
 The rules and the chord table are ported from abcjs 6.7.2 (MIT license,
 © Paul Rosen and Gregory Dyke) in `MidiClipboard/chord_track.py`.
-
-## Choosing the copy format
-
-Copy writes ABC by default. To copy the lossless native format instead,
-set `COPY_FORMAT = "text"` near the top of `MidiClipboard/MidiClipboard.py`
-and restart Live. Paste reads both formats either way.
 
 ## Native text format
 
@@ -320,6 +439,13 @@ Script import errors go to Live's own log (`Log.txt`, in
   `MidiClipboard/bridge.log` directly. If its last lines aren't from today,
   the bridge isn't running — toggle the script off/on in Ableton's
   preferences.
+- **Windows: the helper never starts.** Check that `bridge.exe` is still in
+  the `MidiClipboard` folder. Antivirus software sometimes quarantines
+  self-contained Python apps like it. Restore it (or reinstall) and add an
+  exception for the folder.
+- **Mac: the helper never starts after a browser download.** Run the
+  `xattr` command from [step 2](#2-put-the-folder-in-lives-remote-scripts-folder),
+  then restart Live.
 - **Mac: log says `no Input Monitoring permission`.** Turn on Ableton Live in
   **System Settings → Privacy & Security → Input Monitoring**, then quit and
   reopen Live. If Live isn't listed, click **+** and add it from
@@ -329,7 +455,10 @@ Script import errors go to Live's own log (`Log.txt`, in
   on a Mac run `pkill -f MidiClipboard/bridge`. Then toggle the script.
 - **Not in the Control Surface dropdown.** The folder must be named exactly
   `MidiClipboard` under `Documents\Ableton\User Library\Remote Scripts\`
-  (Windows) or `~/Music/Ableton/User Library/Remote Scripts/` (Mac).
+  (Windows) or `~/Music/Ableton/User Library/Remote Scripts/` (Mac), with
+  `MidiClipboard.py` directly inside it. A common slip is one folder too
+  many, such as `Remote Scripts\MidiClipboard-Windows\MidiClipboard`. Live
+  also needs a restart to see a newly added script.
 
 ## Requirements
 
@@ -339,7 +468,8 @@ Script import errors go to Live's own log (`Log.txt`, in
 
 ## Roadmap
 
-- Sign and notarize the Mac helper, so it also runs from a zip download
+- Sign and notarize the Mac helper, so a browser download runs without the
+  `xattr` step
 - Configurable hotkeys and ports
 - Optional time-shift on paste (to playhead instead of recorded positions)
 - A hotkey to switch the copy format without editing the script
