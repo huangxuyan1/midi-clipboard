@@ -1,6 +1,7 @@
 """Tkinter log viewer for the MidiClipboard bridge.
 
-Spawned by bridge.py when Ctrl+Shift+L is pressed. Tails the bridge log
+Spawned by bridge.py when Ctrl+Shift+L (Cmd+Shift+L on a Mac) is pressed.
+Tails the bridge log
 file in a small dark window that auto-scrolls as new lines arrive. This is
 its own process, so closing the window does not affect the bridge.
 
@@ -17,6 +18,24 @@ DEFAULT_LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "bridge.l
 POLL_MS = 500
 TAIL_LINES = 200
 
+IS_MAC = sys.platform == "darwin"
+# Segoe UI and Consolas don't exist on a Mac, where Tk would fall back to a
+# proportional system font for the log text.
+HEADER_FONT = ("Helvetica Neue", 12) if IS_MAC else ("Segoe UI", 9)
+TEXT_FONT = ("Menlo", 12) if IS_MAC else ("Consolas", 10)
+
+
+def _activate_mac_app():
+    """On a Mac, a window opened by a background process starts behind the
+    active app (Live), and lift() / -topmost don't change which app is
+    active. Ask AppKit to activate this process. pyobjc ships with the Mac
+    bridge; without it the window just opens behind."""
+    try:
+        from AppKit import NSApplication
+        NSApplication.sharedApplication().activateIgnoringOtherApps_(True)
+    except Exception:
+        pass
+
 
 class LogViewer:
     def __init__(self, log_path):
@@ -32,12 +51,12 @@ class LogViewer:
             self.root, text="watching  {}".format(log_path),
             anchor="w", padx=10, pady=6,
             background="#252526", foreground="#9cdcfe",
-            font=("Segoe UI", 9),
+            font=HEADER_FONT,
         )
         header.pack(fill="x")
 
         self.text = scrolledtext.ScrolledText(
-            self.root, wrap="none", font=("Consolas", 10),
+            self.root, wrap="none", font=TEXT_FONT,
             background="#1e1e1e", foreground="#d4d4d4",
             insertbackground="#d4d4d4", borderwidth=0, padx=8, pady=4,
         )
@@ -45,6 +64,8 @@ class LogViewer:
         self.text.configure(state="disabled")
 
         # Bring to front on open.
+        if IS_MAC:
+            _activate_mac_app()
         self.root.lift()
         self.root.attributes("-topmost", True)
         self.root.after(400, lambda: self.root.attributes("-topmost", False))

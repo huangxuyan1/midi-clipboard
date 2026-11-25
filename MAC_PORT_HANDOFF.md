@@ -5,7 +5,86 @@ the same three shortcuts, using Cmd in place of Ctrl, while Windows keeps
 working exactly as it does now.
 
 Written 2026-11-24 on the Windows dev machine, on top of commit `5d60b4d`.
-Nothing Mac-specific exists yet.
+
+## Mac-side status (2026-11-24, branch `mac-port`)
+
+All five steps of the plan below are done on an Intel Mac (macOS 15.4,
+Live 11.3.43, python.org Python 3.10.11), and it works in Live. A few
+checklist items haven't been exercised in Live yet; see "Still open".
+
+Changes from the plan, and why:
+
+- **The Mac binary is a PyInstaller onedir folder, `MidiClipboard/bridge-macos/`,
+  not a single `bridge` file.** A onefile build took ~17 s on *every* launch:
+  it unpacks its libraries to a fresh temp folder each time, and macOS checks
+  each new library before loading it. The onedir folder pays that once, on
+  its first launch, then starts in ~0.6 s. `.gitignore` re-includes its
+  `.so` files. Windows still builds a onefile `bridge.exe`.
+- **Frozen Mac bridge logs to `MidiClipboard/bridge.log`**, the parent of
+  its folder, the same place as on Windows.
+- **`viewer.py`**: on a Mac it uses Menlo / Helvetica Neue (Consolas and
+  Segoe UI fell back to a proportional font) and asks AppKit to activate
+  it. Without that, the window opened behind Live.
+- **Dev fallback interpreter**: Live started from the Dock has a minimal
+  PATH, so a bare `python3` is Apple's, without pyobjc. The script tries the
+  python.org Python, then Homebrew's; `MAC_PYTHON_EXE` forces one.
+- **Watchdog**: the remote script passes Live's PID in
+  `MIDICLIPBOARD_LIVE_PID` (Mac only); the bridge exits once that process is
+  gone, so a crashed Live doesn't leave a keyboard listener running.
+- **No permission**: besides logging the setting, the bridge calls
+  `CGRequestListenEventAccess()`, so macOS shows its prompt and lists the app.
+- `bridge_win.py` is the old Win32 code moved verbatim, except that the hook
+  calls `on_copy` / `on_paste` / `on_viewer` instead of doing the UDP send
+  and thread starts itself. The backend interface gained `last_error()`, so
+  the clipboard-failure log line keeps its `GetLastError=` detail on Windows.
+
+Verified outside Live (harness scripts, not committed):
+
+- 46 unit tests pass; `MidiClipboard.py` parses as Python 3.7.
+- The remote script, driven by stub `Live` / `ableton.v2` modules against a
+  real bridge, logs "MidiClipboard ready", copies notes to the clipboard as
+  ABC (non-ASCII intact), pastes them back, and `disconnect()` stops and
+  reaps the bridge. With `IS_WINDOWS` forced on, it makes exactly the old
+  `Popen([bridge.exe], creationflags=CREATE_NO_WINDOW)` and `taskkill` calls.
+- The Windows hook logic, run against a mocked Win32 layer, fires once per
+  press, needs Shift for V and L, stays quiet outside Ableton, and always
+  calls `CallNextHookEx`.
+- The Mac tap callback, fed synthetic `CGEvent`s: same behaviour, plus it
+  skips auto-repeat, ignores Ctrl, and re-enables a tap macOS disabled.
+- `CFRunLoopRun` releases the GIL (the UDP listener thread keeps running),
+  and `frontmostApplication` stays current inside it.
+- A second bridge exits on the taken UDP port 19846 (`Errno 48`) before any
+  tap; SIGTERM stops the bridge at once.
+
+Confirmed in Live 11.3.43, from `bridge.log` and the system privacy log:
+
+- With the control surface selected, the built helper starts
+  (`bridge=ok (exe)`), installs the tap, and the frontmost app reads
+  `com.ableton.live`.
+- **Step 4:** macOS charges Input Monitoring to **Ableton Live**
+  (`com.ableton.live`), the responsible process, not to the helper. Without
+  the permission the bridge logged the setting and exited; after it was
+  granted and Live restarted, the tap installed.
+- Cmd+C with notes selected put ABC on the clipboard.
+- Cmd+Shift+V pasted ABC (15 and 34 notes) and native text (3 notes).
+- A second bridge started by hand exited on the taken port.
+- After Live was quit and reopened, only the new Live's bridge was running.
+
+Still open:
+
+- Not yet exercised in Live (each passes in the harness): Cmd+C with nothing
+  selected, Cmd+Shift+L opening one viewer per press, shortcuts staying
+  quiet in other apps, and turning the control surface off. Cmd+Z after a
+  paste and Live's own copy weren't reported either way.
+- `Python.framework` inside `bridge-macos` fails a bundle-level
+  `codesign --verify` ("code has no resources but signature indicates they
+  must be present"). That comes from PyInstaller and doesn't stop it running
+  from a git clone. Signing and notarizing for zip downloads is on the
+  Roadmap.
+- On the first launch after a fresh clone the bridge needs ~17 s, so the
+  remote script's activation STATUS line (sent after 2 s) is lost that once.
+- Windows: rebuild `bridge.exe` and re-run the checklist (see "Back on
+  Windows afterwards").
 
 ## Where things stand
 
@@ -99,22 +178,34 @@ Then remove "macOS support" from the Roadmap.
 
 ## Mac checklist
 
-- [ ] `python3 -m unittest discover -s tests` passes.
-- [ ] Live shows "MidiClipboard ready", and `MidiClipboard/bridge.log` shows `STATUS: MidiClipboard activated (... bridge=ok ...)`.
+- [x] `python3 -m unittest discover -s tests` passes.
+- [x] Live shows "MidiClipboard ready", and `MidiClipboard/bridge.log` shows `STATUS: MidiClipboard activated (... bridge=ok ...)`.
 - [ ] Cmd+C with notes selected puts ABC on the clipboard (check with `pbpaste`). With nothing selected the clipboard is unchanged. Live's own copy still works.
 - [ ] Cmd+Shift+V pastes both ABC and native text into the open clip, and Cmd+Z undoes it.
 - [ ] Cmd+Shift+L opens exactly one viewer per press, even while held.
 - [ ] No shortcut fires while another app is frontmost.
-- [ ] A second bridge exits instead of installing a second tap. (The single-instance bind on UDP 19846 has no `SO_REUSEADDR`; confirm macOS refuses the second bind.)
+- [x] A second bridge exits instead of installing a second tap. (The single-instance bind on UDP 19846 has no `SO_REUSEADDR`; confirm macOS refuses the second bind.)
 - [ ] Turning the control surface off, or quitting Live, leaves no bridge process (`pgrep -fl bridge`).
 
 ## Back on Windows afterwards
 
-The split changes `bridge.py`, so the committed `bridge.exe` is stale.
+The split changes `bridge.py`, so the committed `bridge.exe` is stale. It
+still runs (it bundles the old single-file bridge), but it doesn't match the
+source.
 On Windows:
 1. Run `python build_bridge.py`.
 2. Restart Live.
 3. Re-run the checklist with the Ctrl shortcuts.
+
+### Raised during Mac testing: chord symbols on paste
+
+Pasting a tune with chord symbols (`"G"B2 d | "C"e2 c |`) gives only the
+melody. That's by design and the same on both systems: `_Tokenizer._token`
+in `abc_serde.py` skips from an opening `"` to the closing one and emits
+nothing, and the README lists chord symbols under "Ignored". Expanding
+symbols into notes would be a new paste feature. It needs decisions on which
+chord types to support, the voicing, and the octave (below the melody), with
+each chord held until the next symbol.
 
 ## Mac dev setup
 

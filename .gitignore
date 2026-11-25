@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.so
+# ...except the native libraries the Mac bridge build ships with.
+!MidiClipboard/bridge-macos/**/*.so
 *.egg
 *.egg-info/
 .eggs/
